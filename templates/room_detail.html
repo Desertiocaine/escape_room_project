@@ -1,0 +1,19 @@
+<!-- room_detail.html -->
+<h1>{{ room.name }}</h1>
+<p>{{ room.description }}</p>
+<p>Max players: {{ room.max_players }}</p>
+<h2>Puzzles</h2>
+<ul>
+  {% for puzzle in puzzles %}
+    <li>
+      {{ puzzle.question }}
+      <form method="post" action="{% url 'solve_puzzle' puzzle.id %}">
+        {% csrf_token %}
+        <input type="text" name="answer" placeholder="Your answer">
+        <button type="submit">Submit</button>
+      </form>
+    </li>
+  {% empty %}
+    <li>No puzzles yet.</li>
+  {% endfor %}
+</ul>

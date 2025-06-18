@@ -3,6 +3,8 @@ from django.db import models
 from django.conf import settings
 
 class Room(models.Model):
+    """Represents an escape room with its details."""
+
     name = models.CharField(max_length=100)
     description = models.TextField()
     difficulty = models.IntegerField()
@@ -22,6 +24,8 @@ class Puzzle(models.Model):
 
 
 class Booking(models.Model):
+    """Represents a booking for an escape room."""
+
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     room = models.ForeignKey('Room', on_delete=models.CASCADE)
     booking_time = models.DateTimeField()

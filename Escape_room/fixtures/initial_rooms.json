@@ -1,0 +1,52 @@
+[
+  {
+    "model": "Escape_room.room",
+    "pk": 1,
+    "fields": {
+      "name": "The Haunted Library",
+      "description": "Solve the mystery of the haunted books.",
+      "difficulty": 3,
+      "max_players": 6
+    }
+  },
+  {
+    "model": "Escape_room.room",
+    "pk": 2,
+    "fields": {
+      "name": "Space Station Alpha",
+      "description": "Escape before the oxygen runs out.",
+      "difficulty": 4,
+      "max_players": 8
+    }
+  },
+  {
+    "model": "Escape_room.room",
+    "pk": 3,
+    "fields": {
+      "name": "The Pharaoh's Tomb",
+      "description": "Uncover the secrets of the ancient tomb before time runs out.",
+      "difficulty": 5,
+      "max_players": 5
+    }
+  },
+  {
+    "model": "Escape_room.room",
+    "pk": 4,
+    "fields": {
+      "name": "Cyber Heist",
+      "description": "Hack into the mainframe and escape undetected.",
+      "difficulty": 4,
+      "max_players": 7
+    }
+  },
+  {
+    "model": "Escape_room.room",
+    "pk": 5,
+    "fields": {
+      "name": "The Enchanted Forest",
+      "description": "Find your way out of the magical forest by solving fairy riddles.",
+      "difficulty": 2,
+      "max_players": 4
+    }
+  }
+]
