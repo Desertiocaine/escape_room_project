@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9b723c2-d1cd-4b92-85a7-8fd68affec05" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Escape_room/fixtures/initial_rooms.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/room_confirm_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/room_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/room_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/room_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DjangoProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DjangoProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DjangoProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Escape_room/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Escape_room/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Escape_room/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Escape_room/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Escape_room/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Escape_room/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Escape_room/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Escape_room/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +109,7 @@
       <workItem from="1749495454971" duration="2264000" />
       <workItem from="1749738321856" duration="4790000" />
       <workItem from="1749824768207" duration="26000" />
-      <workItem from="1750207186227" duration="422000" />
+      <workItem from="1750207186227" duration="1782000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,3 @@
-python
 from rest_framework import viewsets
 from .models import Room, Puzzle, Booking, Team
 from .serializers import RoomSerializer, PuzzleSerializer, BookingSerializer, TeamSerializer
