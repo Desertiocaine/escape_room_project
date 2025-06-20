@@ -13,7 +13,10 @@ class Room(models.Model):
     def __str__(self):
         return self.name
 
+
+
 class Puzzle(models.Model):
+    """Represents a puzzle that is linked to a room"""
     room = models.ForeignKey('Room', on_delete=models.CASCADE, related_name='puzzles')
     question = models.TextField()
     answer = models.CharField(max_length=255)
