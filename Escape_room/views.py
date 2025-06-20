@@ -6,6 +6,9 @@ from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
+from django.shortcuts import render, redirect
 
 def room_list(request):
     rooms = Room.objects.all()
@@ -35,6 +38,17 @@ def team_detail(request, pk):
     team = get_object_or_404(Team, pk=pk)
     members = team.members.all()
     return render(request, 'team_detail.html', {'team': team, 'members': members})
+
+def register(request):
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('team_list') # or any page
+    else:
+        form = UserCreationForm()
+    return render(request, 'register.html', {'form': form})
 
 class RoomViewSet(viewsets.ModelViewSet):
     queryset = Room.objects.all()
