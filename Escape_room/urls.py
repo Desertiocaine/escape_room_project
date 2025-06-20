@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import RoomViewSet, PuzzleViewSet, BookingViewSet, TeamViewSet, room_detail, room_list, RoomCreateView, \
-    RoomUpdateView, RoomDeleteView, team_list, team_detail
+    RoomUpdateView, RoomDeleteView, team_list, team_detail, TeamCreateView, TeamUpdateView, TeamDeleteView
 
 router = DefaultRouter()
 router.register(r'rooms', RoomViewSet)
@@ -21,4 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('teams/', team_list, name='team_list'),
     path('teams/<int:pk>/', team_detail, name='team_detail'),
+    path('teams/create/', TeamCreateView.as_view(), name='team_create'),
+    path('teams/<int:pk>/edit/', TeamUpdateView.as_view(), name='team_update'),
+    path('teams/<int:pk>/delete/', TeamDeleteView.as_view(), name='team_delete'),
 ]

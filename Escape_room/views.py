@@ -71,3 +71,20 @@ class RoomDeleteView(DeleteView):
     template_name = 'room_confirm_delete.html'
     success_url = reverse_lazy('room_list')
 # Create your views here.
+
+class TeamCreateView(CreateView):
+    model = Team
+    fields = ['name', 'members', 'room']
+    template_name = 'team_form.html'
+    success_url = reverse_lazy('team_list')
+
+class TeamUpdateView(UpdateView):
+    model = Team
+    fields = ['name', 'members', 'room']
+    template_name = 'team_form.html'
+    success_url = reverse_lazy('team_list')
+
+class TeamDeleteView(DeleteView):
+    model = Team
+    template_name = 'team_confirm_delete.html'
+    success_url = reverse_lazy('team_list')
