@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ team.name }}</title>
+</head>
+<body>
+    <h1>Team: {{ team.name }}</h1>
+    <h2>Members:</h2>
+    <ul>
+        {% for member in members %}
+            <li>{{ member.username }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'team_list' %}">Bak to Team List</a>
+</body>
+</html>

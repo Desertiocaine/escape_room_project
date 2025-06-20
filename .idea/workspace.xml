@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9b723c2-d1cd-4b92-85a7-8fd68affec05" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/team_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/team_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Escape_room/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Escape_room/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Escape_room/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Escape_room/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,9 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
         <option value="package.json" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -109,7 +112,7 @@
       <workItem from="1749738321856" duration="4790000" />
       <workItem from="1749824768207" duration="26000" />
       <workItem from="1750207186227" duration="1782000" />
-      <workItem from="1750393695541" duration="1395000" />
+      <workItem from="1750393695541" duration="2299000" />
     </task>
     <servers />
   </component>

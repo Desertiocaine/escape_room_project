@@ -5,6 +5,7 @@ from django.shortcuts import render , get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
+from django.contrib.auth.models import User
 
 def room_list(request):
     rooms = Room.objects.all()
@@ -25,6 +26,15 @@ def solve_puzzle(request, puzzle_id):
         else:
             return render(request, "puzzle_solved.html", {"puzzle": puzzle, "correct": False})
     return HttpResponseRedirect(reverse("room_detail", args=[puzzle.room.id]))
+
+def team_list(request):
+    teams = Team.objects.all()
+    return render(request, 'team_list.html', {'teams': teams})
+
+def team_detail(request, pk):
+    team = get_object_or_404(Team, pk=pk)
+    members = team.members.all()
+    return render(request, 'team_detail.html', {'team': team, 'members': members})
 
 class RoomViewSet(viewsets.ModelViewSet):
     queryset = Room.objects.all()
