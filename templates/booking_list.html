@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Booking List</h2>
+    <ul>
+        {% for booking in bookings %}
+            <li>
+                <a href="{% url 'booking_detail' booking.pk %}">
+                    Booking #{{ booking.pk }} - {{ booking.room.name }} at {{ booking.booking_time }}
+                </a>
+            </li>
+        {% empty %}
+            <li>No bookings found.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'booking_create' %}">Create New Booking</a>
+{% endblock %}

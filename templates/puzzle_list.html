@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Puzzle List</title>
+</head>
+<body>
+    <h1>Puzzle List</h1>
+    <ul>
+        {% for puzzle in puzzles %}
+            <li>
+                <strong>{{ puzzle.name }}</strong><br>
+                {{ puzzle.description }}
+            </li>
+        {% empty %}
+            <li>No puzzles available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
