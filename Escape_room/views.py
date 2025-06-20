@@ -31,6 +31,7 @@ class RoomViewSet(viewsets.ModelViewSet):
     serializer_class = RoomSerializer
 
 class PuzzleViewSet(viewsets.ModelViewSet):
+    # Creates full CRUD API functionality for Puzzle model
     queryset = Puzzle.objects.all()
     serializer_class = PuzzleSerializer
 
@@ -39,6 +40,7 @@ class BookingViewSet(viewsets.ModelViewSet):
     serializer_class = BookingSerializer
 
 class TeamViewSet(viewsets.ModelViewSet):
+    # Creates full CRUD API functionality for Team model
     queryset = Team.objects.all()
     serializer_class = TeamSerializer
 
