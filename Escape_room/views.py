@@ -9,6 +9,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 from django.shortcuts import render, redirect
+from django.contrib.auth.mixins import UserPassestestMixin
+from django.contrib.auth.decorators import user_passes_test
 
 def room_list(request):
     rooms = Room.objects.all()
@@ -30,6 +32,7 @@ def solve_puzzle(request, puzzle_id):
             return render(request, "puzzle_solved.html", {"puzzle": puzzle, "correct": False})
     return HttpResponseRedirect(reverse("room_detail", args=[puzzle.room.id]))
 
+@user_passes_test(lambda u: u.is_staff)
 def team_list(request):
     teams = Team.objects.all()
     return render(request, 'team_list.html', {'teams': teams})
@@ -86,19 +89,31 @@ class RoomDeleteView(DeleteView):
     success_url = reverse_lazy('room_list')
 # Create your views here.
 
-class TeamCreateView(CreateView):
+class TeamCreateView(UserPassesTestMixin, CreateView):
     model = Team
     fields = ['name', 'members', 'room']
     template_name = 'team_form.html'
     success_url = reverse_lazy('team_list')
 
-class TeamUpdateView(UpdateView):
+    # Admin only view test
+    def test_func(self):
+        return self.request.user.is_staff
+
+class TeamUpdateView(UserPassesTestMixin, UpdateView):
     model = Team
     fields = ['name', 'members', 'room']
     template_name = 'team_form.html'
     success_url = reverse_lazy('team_list')
 
-class TeamDeleteView(DeleteView):
+    # Admin only view test
+    def test_func(self):
+        return self.request.user.is_staff
+
+class TeamDeleteView(UserPassesTestMixin, DeleteView):
     model = Team
     template_name = 'team_confirm_delete.html'
     success_url = reverse_lazy('team_list')
+
+    # Admin only view test
+    def test_func(self):
+        return self.request.user.is_staff

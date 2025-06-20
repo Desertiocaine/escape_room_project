@@ -11,7 +11,12 @@
         {% for member in members %}
             <li>{{ member.username }}</li>
         {% endfor %}
+
+        {% if user.is_staff %}
+            <a href="{% url 'team_update' team.pk %}">Edit</a>
+            <a href="{% url 'team_delete' team.pok %}">Delete</a>
+        {% endif %}
     </ul>
-    <a href="{% url 'team_list' %}">Bak to Team List</a>
+    <a href="{% url 'team_list' %}">Back to Team List</a>
 </body>
 </html>

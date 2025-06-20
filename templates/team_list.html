@@ -10,6 +10,10 @@
         {% for team in teams %}
             <li><a href="{%  url 'team_detail' team.pk %}">{{ team.name }}</a></li>
         {% endfor %}
+
+        {% if user.is_staff %}
+            <a href=" {% url 'team_create' %}">Create Team</a>
+        <{% endif %}
     </ul>
 </body>
 </html>
