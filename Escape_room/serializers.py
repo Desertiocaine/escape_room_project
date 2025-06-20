@@ -1,4 +1,3 @@
-# Escape_room/serializers.py
 from rest_framework import serializers
 from .models import Room, Puzzle, Booking, Team
 
