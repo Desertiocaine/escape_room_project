@@ -1,20 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ puzzle.name }}</title>
-</head>
-<body>
+{% if puzzle %}
     <h1>{{ puzzle.name }}</h1>
     <p>{{ puzzle.description }}</p>
 
     <h2>Submit Your Answer</h2>
     <form method="post" action="{% url 'solve_puzzle' puzzle.id %}">
         {% csrf_token %}
-        <input type="text" name="answer" placeholder="Your answer" required>
+        <input type="text" name="answer" placeholder="Make your guess" required>
         <button type="submit">Submit</button>
     </form>
+{% else %}
+    <h1>You survived!</h1>
+{% endif %}
 
-    <a href="{% url 'puzzle_list' %}">Back to Puzzle List</a>
-</body>
-</html>
+<a href="{% url 'puzzle_list' %}">Back to Puzzle List</a>

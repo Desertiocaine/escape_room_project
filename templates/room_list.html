@@ -12,5 +12,7 @@
             <li>No rooms found.</li>
         {% endfor %}
     </ul>
-    <a href="{% url 'room_create' %}">Create New Room</a>
+    {% if user.is_staff %}
+        <a href="{% url 'room_create' %}">Create New Room</a>
+    {% endif %}
 {% endblock %}
