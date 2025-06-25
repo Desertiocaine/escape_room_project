@@ -218,7 +218,7 @@ class TeamDeleteView(UserPassesTestMixin, DeleteView):
         return self.request.user.is_staff
 
 # ===========================
-# DRF VIEWSETS
+# DRF VIEW SETS
 # ===========================
 
 class RoomViewSet(viewsets.ModelViewSet):

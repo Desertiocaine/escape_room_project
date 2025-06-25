@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <title>Team List</title>
 </head>
 <body>
-    <h1>Teams</h1>
+    <h1>Teams List</h1>
     <ul>
         {% for team in teams %}
             <li><a href="{%  url 'team_detail' pk=team.pk %}">{{ team.name }}</a></li>
         {% endfor %}
 
         {% if user.is_staff %}
-            <a href=" {% url 'team_create' %}">Create Team</a>
-        <{% endif %}
+            <a href="{% url 'team_create' %}">Create Team</a>
+        {% endif %}
+    <a href="{% url 'members' %}">← Back to Members Area</a>
     </ul>
 </body>
 </html>

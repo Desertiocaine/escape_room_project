@@ -8,6 +8,8 @@
     <h1>Teams</h1>
     {% if user.is_authenticated %}
         <ul>
+
+
             {% for team in teams %}
                 <li>
                     {{ team.name }} ({{ team.members.count }} members)
@@ -24,7 +26,8 @@
                 <li>No teams available.</li>
             {% endfor %}
         </ul>
-        <a href="{% url 'team_create' %}">Create a new team</a>
+
+        <a href="{% url 'team_create' %}">Create Team</a>
     {% else %}
         <p>Please <a href="{% url 'login' %}">log in</a> to view and join teams.</p>
     {% endif %}
