@@ -29,7 +29,7 @@ def home(request):
     return render(request, 'index.html')
 
 @login_required
-def teams(request):
+def team_list(request):
     teams = Team.objects.all()
     return render(request, 'teams.html', {'teams': teams})
 
@@ -154,7 +154,7 @@ def solve_puzzle(request, puzzle_id):
         'puzzle': puzzle
     })
 
-def puzzle_solved(request, puzzle_id):
+def puzzle_solved(request):
     return render(request,'puzzle_solved.html')
 
 class PuzzleCreateView(UserPassesTestMixin, CreateView):
@@ -194,7 +194,7 @@ def booking_detail(request, pk):
 
 class BookingCreateView(LoginRequiredMixin, CreateView):
     model = Booking
-    fields = ['team', 'room', 'completed']
+    fields = ['team', 'room', 'duration_minutes']
     template_name = 'booking_form.html'
     success_url = reverse_lazy('booking_list')
 
@@ -213,7 +213,7 @@ class BookingDeleteView(LoginRequiredMixin, DeleteView):
 # TEAM VIEWS
 # ===========================
 
-def team_list(request):
+def team_list_view(request):
     teams = Team.objects.all()
     return render(request, 'team_list.html', {'teams': teams})
 
