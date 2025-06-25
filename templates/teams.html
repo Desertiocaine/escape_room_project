@@ -1,31 +1,35 @@
 {% extends 'base.html' %}
-
 {% block content %}
-    <h1>Teams</h1>
-    {% if user.is_authenticated %}
-        <ul>
 
+<h1>Teams</h1>
 
-            {% for team in teams %}
-                <li>
-                    {{ team.name }} ({{ team.members.count }} members)
-                    {% if user in team.members.all %}
-                        - You are a member
-                    {% else %}
-                        <form method="post" action="{% url 'join_team' team.id %}">
-                            {% csrf_token %}
-                            <button type="submit">Join</button>
-                        </form>
-                    {% endif %}
-                </li>
-            {% empty %}
-                <li>No teams available.</li>
-            {% endfor %}
-        </ul>
+{% if user.is_authenticated %}
+    <ul>
+        {% for team in teams %}
+            <li>
+                <!-- Link team name to detail page -->
+                <a href="{% url 'team_detail' team.pk %}">{{ team.name }}</a>
+                ({{ team.members.count }} members)
 
-        <a href="{% url 'team_create' %}">Create Team</a>
-    {% else %}
-        <p>Please <a href="{% url 'login' %}">log in</a> to view and join teams.</p>
-    {% endif %}
-    <a href="{% url 'members' %}">Back to Members Area</a>
+                {% if user in team.members.all %}
+                    - You are a member
+                {% else %}
+                    <form method="post" action="{% url 'join_team' team.id %}">
+                        {% csrf_token %}
+                        <button type="submit">Join</button>
+                    </form>
+                {% endif %}
+            </li>
+        {% empty %}
+            <li>No teams available.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'team_create' %}">Create Team</a>
+{% else %}
+    <p>Please <a href="{% url 'login' %}">log in</a> to view and join teams.</p>
+{% endif %}
+
+<a href="{% url 'members' %}">Back to Members Area</a>
+
 {% endblock %}

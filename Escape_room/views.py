@@ -53,6 +53,14 @@ def create_puzzle(request):
 def members(request):
     return render(request, 'members.html')
 
+@login_required
+def join_team(request, pk):
+    team = get_object_or_404(Team, pk=pk)
+    team.members.add(request.user)
+    team.save()
+    messages.success(request,f"You joined the team: {team.name}")
+    return redirect('team_list')
+
 def register(request):
     if request.method == "POST":
         form = UserCreationForm(request.POST)

@@ -55,6 +55,7 @@ urlpatterns = [
     path('teams/<int:pk>/edit/', views.TeamUpdateView.as_view(), name='team_update'),
     path('teams/<int:pk>/delete/', views.TeamDeleteView.as_view(), name='team_delete'),
     path('teams/pick/', views.team_list_view, name='teams'),  # For member team picking
+    path('teams/<int:pk>/join/', views.join_team, name='join_team'),
 
     # Games
     path('games/', views.games, name='games'),
