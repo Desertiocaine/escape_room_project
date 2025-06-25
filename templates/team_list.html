@@ -8,7 +8,7 @@
     <h1>Teams</h1>
     <ul>
         {% for team in teams %}
-            <li><a href="{%  url 'team_detail' team.pk %}">{{ team.name }}</a></li>
+            <li><a href="{%  url 'team_detail' pk=team.pk %}">{{ team.name }}</a></li>
         {% endfor %}
 
         {% if user.is_staff %}

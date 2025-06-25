@@ -166,13 +166,13 @@ def booking_detail(request, pk):
 
 class BookingCreateView(LoginRequiredMixin, CreateView):
     model = Booking
-    fields = ['user', 'room', 'booking_time']
+    fields = ['team', 'room', 'completed']
     template_name = 'booking_form.html'
     success_url = reverse_lazy('booking_list')
 
 class BookingUpdateView(LoginRequiredMixin, UpdateView):
     model = Booking
-    fields = ['user', 'room', 'booking_time']
+    fields = ['user', 'room', 'booking_time', 'completed']
     template_name = 'booking_form.html'
     success_url = reverse_lazy('booking_list')
 

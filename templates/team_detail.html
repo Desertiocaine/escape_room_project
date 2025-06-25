@@ -14,7 +14,7 @@
 
         {% if user.is_staff %}
             <a href="{% url 'team_update' team.pk %}">Edit</a>
-            <a href="{% url 'team_delete' team.pok %}">Delete</a>
+            <a href="{% url 'team_delete' team.pk %}">Delete</a>
         {% endif %}
     </ul>
     <a href="{% url 'team_list' %}">Back to Team List</a>
