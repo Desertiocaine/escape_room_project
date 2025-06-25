@@ -8,8 +8,8 @@
 
     {% if puzzle %}
       <h2>{{ puzzle.name }}</h2>
-      <p><strong>Riddle:</strong> {{ puzzle.question }}</p>
       <p>{{ puzzle.description }}</p>
+      <p><strong>Riddle:</strong> {{ puzzle.question }}</p>
       <form method="post">
         {% csrf_token %}
         <input type="text" name="answer" placeholder="Make your guess">
