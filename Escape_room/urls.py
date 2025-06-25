@@ -54,7 +54,7 @@ urlpatterns = [
     path('teams/create/', views.TeamCreateView.as_view(), name='team_create'),
     path('teams/<int:pk>/edit/', views.TeamUpdateView.as_view(), name='team_update'),
     path('teams/<int:pk>/delete/', views.TeamDeleteView.as_view(), name='team_delete'),
-    path('teams/pick/', views.teams, name='teams'),  # For member team picking
+    path('teams/pick/', views.team_list_view, name='teams'),  # For member team picking
 
     # Games
     path('games/', views.games, name='games'),
