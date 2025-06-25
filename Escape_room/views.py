@@ -7,8 +7,8 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
-from django.contrib.auth.mixins import UserPassesTestMixin
-from django.contrib.auth.decorators import user_passes_test
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
+from django.contrib.auth.decorators import login_required, user_passes_test
 
 # --- Django Generic Views ---
 from django.views.generic import CreateView, UpdateView, DeleteView
@@ -27,13 +27,38 @@ from .serializers import RoomSerializer, PuzzleSerializer, BookingSerializer, Te
 def home(request):
     return render(request, 'index.html')
 
+@login_required
+def teams(request):
+    teams = Team.objects.all()
+    return render(request, 'teams.html', {'teams': teams})
+
+@login_required
+def book_room(request):
+    return render(request, 'book_room.html')
+
+@login_required
+def games(request):
+    return render(request, 'games.html')
+
+@user_passes_test(lambda u: u.is_staff)
+def create_room(request):
+    return render(request, 'create_room.html')
+
+@user_passes_test(lambda u: u.is_staff)
+def create_puzzle(request):
+    return render(request, 'create_puzzle.html')
+
+@login_required
+def members(request):
+    return render(request, 'members.html')
+
 def register(request):
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('team_list')
+            return redirect('members')
     else:
         form = UserCreationForm()
     return render(request, 'register.html', {'form': form})
@@ -46,27 +71,41 @@ def room_list(request):
     rooms = Room.objects.all()
     return render(request, 'room_list.html', {'rooms': rooms})
 
-def room_detail(request, pk):
-    room = get_object_or_404(Room, pk=pk)
-    puzzles = room.puzzles.all()
-    return render(request, 'room_detail.html', {'room': room, 'puzzles': puzzles})
+def room_detail(request, room_id):
+    room = get_object_or_404(Room, id=room_id)
+    # Get the next unsolved puzzle for this room
+    puzzle = Puzzle.objects.filter(room=room, solved=False).first()
+    if request.method == 'POST' and puzzle:
+        answer = request.POST.get('answer')
+        if answer and answer.strip().lower() == puzzle.answer.lower():
+            puzzle.solved = True
+            puzzle.save()
+            # Get the next unsolved puzzle after solving
+            puzzle = Puzzle.objects.filter(room=room, solved=False).first()
+    return render(request, 'room_detail.html', {'room': room, 'puzzle': puzzle})
 
-class RoomCreateView(CreateView):
+class RoomCreateView(UserPassesTestMixin, CreateView):
     model = Room
     fields = ['name', 'description', 'difficulty', 'max_players']
     template_name = 'room_form.html'
     success_url = reverse_lazy('room_list')
+    def test_func(self):
+        return self.request.user.is_staff
 
-class RoomUpdateView(UpdateView):
+class RoomUpdateView(UserPassesTestMixin, UpdateView):
     model = Room
     fields = ['name', 'description', 'difficulty', 'max_players']
     template_name = 'room_form.html'
     success_url = reverse_lazy('room_list')
+    def test_func(self):
+        return self.request.user.is_staff
 
-class RoomDeleteView(DeleteView):
+class RoomDeleteView(UserPassesTestMixin, DeleteView):
     model = Room
     template_name = 'room_confirm_delete.html'
     success_url = reverse_lazy('room_list')
+    def test_func(self):
+        return self.request.user.is_staff
 
 # ===========================
 # PUZZLE VIEWS
@@ -90,22 +129,28 @@ def solve_puzzle(request, puzzle_id):
             return render(request, "puzzle_solved.html", {"puzzle": puzzle, "correct": False})
     return HttpResponseRedirect(reverse("room_detail", args=[puzzle.room.id]))
 
-class PuzzleCreateView(CreateView):
+class PuzzleCreateView(UserPassesTestMixin, CreateView):
     model = Puzzle
     fields = ['name', 'description', 'answer', 'room']
     template_name = 'puzzle_form.html'
     success_url = reverse_lazy('puzzle_list')
+    def test_func(self):
+        return self.request.user.is_staff
 
-class PuzzleUpdateView(UpdateView):
+class PuzzleUpdateView(UserPassesTestMixin, UpdateView):
     model = Puzzle
     fields = ['name', 'description', 'answer', 'room']
     template_name = 'puzzle_form.html'
     success_url = reverse_lazy('puzzle_list')
+    def test_func(self):
+        return self.request.user.is_staff
 
-class PuzzleDeleteView(DeleteView):
+class PuzzleDeleteView(UserPassesTestMixin, DeleteView):
     model = Puzzle
     template_name = 'puzzle_confirm_delete.html'
     success_url = reverse_lazy('puzzle_list')
+    def test_func(self):
+        return self.request.user.is_staff
 
 # ===========================
 # BOOKING VIEWS
@@ -119,19 +164,19 @@ def booking_detail(request, pk):
     booking = get_object_or_404(Booking, pk=pk)
     return render(request, 'booking_detail.html', {'booking': booking})
 
-class BookingCreateView(CreateView):
+class BookingCreateView(LoginRequiredMixin, CreateView):
     model = Booking
     fields = ['user', 'room', 'booking_time']
     template_name = 'booking_form.html'
     success_url = reverse_lazy('booking_list')
 
-class BookingUpdateView(UpdateView):
+class BookingUpdateView(LoginRequiredMixin, UpdateView):
     model = Booking
     fields = ['user', 'room', 'booking_time']
     template_name = 'booking_form.html'
     success_url = reverse_lazy('booking_list')
 
-class BookingDeleteView(DeleteView):
+class BookingDeleteView(LoginRequiredMixin, DeleteView):
     model = Booking
     template_name = 'booking_confirm_delete.html'
     success_url = reverse_lazy('booking_list')
@@ -140,7 +185,6 @@ class BookingDeleteView(DeleteView):
 # TEAM VIEWS
 # ===========================
 
-@user_passes_test(lambda u: u.is_staff)
 def team_list(request):
     teams = Team.objects.all()
     return render(request, 'team_list.html', {'teams': teams})
@@ -152,7 +196,7 @@ def team_detail(request, pk):
 
 class TeamCreateView(UserPassesTestMixin, CreateView):
     model = Team
-    fields = ['name', 'members', 'room']
+    fields = ['name', 'members']
     template_name = 'team_form.html'
     success_url = reverse_lazy('team_list')
     def test_func(self):
@@ -160,7 +204,7 @@ class TeamCreateView(UserPassesTestMixin, CreateView):
 
 class TeamUpdateView(UserPassesTestMixin, UpdateView):
     model = Team
-    fields = ['name', 'members', 'room']
+    fields = ['name', 'members']
     template_name = 'team_form.html'
     success_url = reverse_lazy('team_list')
     def test_func(self):

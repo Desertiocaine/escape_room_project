@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Members Area</title>
+</head>
+<body>
+    <h1>Welcome to the Members Area!</h1>
+    <ul>
+        {% if user.is_staff %}
+            <li><a href="/create-room/">Create Room</a></li>
+            <li><a href="/create-puzzle/">Create Puzzle</a></li>
+        {% endif %}
+        <li><a href="/teams/">Pick Teams</a></li>
+        <li><a href="/book-room/">Book a Room</a></li>
+        <li><a href="/games/">Play Games</a></li>
+        <li><a href="/logout/">Log Out</a></li>
+    </ul>
+</body>
+</html>

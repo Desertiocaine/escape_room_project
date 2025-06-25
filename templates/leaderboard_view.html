@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leaderboard</title>
+</head>
+<body>
+    <h1>Leaderboard</h1>
+    {% if leaderboard %}
+        <table border="1">
+            <tr>
+                <th>Rank</th>
+                <th>Team</th>
+                <th>Score</th>
+            </tr>
+            {% for entry in leaderboard %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ entry.team_name }}</td>
+                <td>{{ entry.score }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No leaderboard data available.</p>
+    {% endif %}
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>
