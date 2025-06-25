@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9b723c2-d1cd-4b92-85a7-8fd68affec05" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/room_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/room_detail.html" afterDir="false" />
     </list>
@@ -113,7 +114,7 @@
       <workItem from="1750207186227" duration="1782000" />
       <workItem from="1750393695541" duration="5232000" />
       <workItem from="1750813637037" duration="8268000" />
-      <workItem from="1750825266598" duration="7034000" />
+      <workItem from="1750825266598" duration="7914000" />
     </task>
     <servers />
   </component>
@@ -138,11 +139,6 @@
           <url>file://$PROJECT_DIR$/Escape_room/serializers.py</url>
           <line>1</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="django-line">
-          <url>file://$PROJECT_DIR$/templates/room_detail.html</url>
-          <line>4</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

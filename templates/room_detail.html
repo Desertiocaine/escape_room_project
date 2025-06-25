@@ -12,8 +12,9 @@
       <p><strong>Riddle:</strong> {{ puzzle.question }}</p>
       <form method="post">
         {% csrf_token %}
-        <input type="text" name="answer" placeholder="Make your guess">
-        <button type="submit">Submit</button>
+          <label for="answer">Your Answer:</label>
+          <input type="text" id="answer" placeholder="Make your guess" required>
+          <button type="submit">Submit</button>
       </form>
     {% else %}
       <p>You survived!</p>
