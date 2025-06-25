@@ -26,7 +26,7 @@ class Puzzle(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
     question = models.TextField(default="")
-    solution = models.CharField(max_length=255)
+    answer = models.CharField(max_length=255)
     order = models.PositiveIntegerField(default=1)
     solved = models.BooleanField(default=False)
 

@@ -9,6 +9,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib import messages
 
 # --- Django Generic Views ---
 from django.views.generic import CreateView, UpdateView, DeleteView
@@ -121,13 +122,36 @@ def puzzle_detail(request, pk):
 
 def solve_puzzle(request, puzzle_id):
     puzzle = get_object_or_404(Puzzle, id=puzzle_id)
+    message = ''
+
     if request.method == "POST":
         user_answer = request.POST.get("answer", "").strip()
-        if user_answer.lower() == puzzle.answer.lower():
-            return render(request, "puzzle_solved.html", {"puzzle": puzzle, "correct": True})
+        if user_answer.lower() == puzzle.solution.lower():  # ✅ FIXED from answer to solution
+            puzzle.solved = True
+            puzzle.save()
+
+            # Try to find the next puzzle in the same room
+            next_puzzle = Puzzle.objects.filter(
+                room=puzzle.room,
+                order__gt=puzzle.order
+            ).order_by('order').first()
+
+            if next_puzzle:
+                messages.success(request, "Correct! Moving to next puzzle...")
+                return redirect('solve_puzzle', puzzle_id=next_puzzle.id)
+            else:
+                return render(request, "solve_puzzle.html", {
+                    "puzzle": puzzle,
+                    "correct": True,
+                    "message": "You completed all puzzles in this room!"
+                })
         else:
-            return render(request, "puzzle_solved.html", {"puzzle": puzzle, "correct": False})
-    return HttpResponseRedirect(reverse("room_detail", args=[puzzle.room.id]))
+            message = "Incorrect answer. Please try again."
+
+    return render(request, "solve_puzzle.html", {
+        "puzzle": puzzle,
+        "message": message
+    })
 
 class PuzzleCreateView(UserPassesTestMixin, CreateView):
     model = Puzzle
