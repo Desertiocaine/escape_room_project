@@ -6,7 +6,7 @@
         {% for booking in bookings %}
             <li>
                 <a href="{% url 'booking_detail' booking.pk %}">
-                    Booking #{{ booking.pk }} - {{ booking.room.name }} at {{ booking.booking_time }}
+                    Booking #{{ booking.pk }} - {{ booking.room.name }} at {{ booking.duration_minutes }} mins
                 </a>
             </li>
         {% empty %}
