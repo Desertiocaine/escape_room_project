@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Teams</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
     <h1>Teams</h1>
     {% if user.is_authenticated %}
         <ul>
@@ -32,5 +28,4 @@
         <p>Please <a href="{% url 'login' %}">log in</a> to view and join teams.</p>
     {% endif %}
     <a href="{% url 'members' %}">Back to Members Area</a>
-</body>
-</html>
+{% endblock %}

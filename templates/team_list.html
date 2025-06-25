@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends 'base.html' %}
 
-    <title>Team List</title>
-</head>
-<body>
+{% block content %}
     <h1>Teams List</h1>
     <ul>
         {% for team in teams %}
@@ -13,9 +8,8 @@
         {% endfor %}
 
         {% if user.is_staff %}
-            <a href="{% url 'team_create' %}">Create Team</a>
+            <a href="{% url 'team_create' %}">Create Team</a> |
         {% endif %}
     <a href="{% url 'members' %}">← Back to Members Area</a>
     </ul>
-</body>
-</html>
+{% endblock %}
