@@ -172,7 +172,7 @@ class BookingCreateView(LoginRequiredMixin, CreateView):
 
 class BookingUpdateView(LoginRequiredMixin, UpdateView):
     model = Booking
-    fields = ['user', 'room', 'booking_time', 'completed']
+    fields = ['room', 'team', 'duration_minutes', 'completed']
     template_name = 'booking_form.html'
     success_url = reverse_lazy('booking_list')
 

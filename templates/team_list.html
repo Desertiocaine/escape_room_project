@@ -8,7 +8,7 @@
         {% endfor %}
 
         {% if user.is_staff %}
-            <a href="{% url 'team_create' %}">Create Team</a> |
+            <a href="{% url 'team_create' %}">Create Team</a><br>
         {% endif %}
     <a href="{% url 'members' %}">← Back to Members Area</a>
     </ul>
