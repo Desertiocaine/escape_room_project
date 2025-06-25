@@ -1,31 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>{{  puzzle.name }}</h2>
-    <p>{{  puzzle.question  }}</p>
-
-    <form method="post">
-        {% csrf_token %}
-        <label for="answer">Your Answer:</label>
-        <input type="text" name="answer" required>
-        <button type="submit">Submit</button>
-    </form>
-
     {% if messages %}
         <ul>
-            {% for message in messages %}
-                <li style="color:green;">{{ message }}</li>
-            {% endfor %}
+        {% for message in messages %}
+            <li style="color: {% if message.tags == 'error' %}red{% else %}green{% endif %};">
+                {{ message }}
+            </li>
+        {% endfor %}
         </ul>
-    {% endif %}
-    {% if correct %}
-        <p style="color: green;">Correct! Moving to next puzzle...</p>
-    {% elif message %}
-        <p style="color: red;">{{ message }}</p>
-    {% endif %}
-
+    {%  endif %}
     <a href="{% url 'booking_list' %}">Back to Bookings</a> |
     <a href="{% url 'room_list' %}">Back to Rooms</a> |
-    <a href="{% url 'members' %}">Back to Member's Area</a> |
-
+    <a href="{% url 'members' %}">Back to Member's Area</a>
 {% endblock %}

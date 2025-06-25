@@ -1,16 +1,21 @@
-<h1>{{ room.name }}</h1>
-<p>{{ room.description }}</p>
-<p>Max players: {{ room.max_players }}</p>
+{% extends 'base.html' %}
 
-{% if puzzle %}
-  <h2>{{ puzzle.name }}</h2>
-  <p><strong>Riddle:</strong> {{ puzzle.question }}</p>
-  <p>{{ puzzle.description }}</p>
-  <form method="post">
-    {% csrf_token %}
-    <input type="text" name="answer" placeholder="Make your guess">
-    <button type="submit">Submit</button>
-  </form>
-{% else %}
-  <p>You survived!</p>
-{% endif %}
+
+{% block content %}
+    <h1>{{ room.name }}</h1>
+    <p>{{ room.description }}</p>
+    <p>Max players: {{ room.max_players }}</p>
+
+    {% if puzzle %}
+      <h2>{{ puzzle.name }}</h2>
+      <p><strong>Riddle:</strong> {{ puzzle.question }}</p>
+      <p>{{ puzzle.description }}</p>
+      <form method="post">
+        {% csrf_token %}
+        <input type="text" name="answer" placeholder="Make your guess">
+        <button type="submit">Submit</button>
+      </form>
+    {% else %}
+      <p>You survived!</p>
+    {% endif %}
+{% endblock %}

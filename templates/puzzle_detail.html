@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
 {% if puzzle %}
     <h1>{{ puzzle.name }}</h1>
     <p>{{ puzzle.description }}</p>
@@ -13,3 +17,4 @@
 {% endif %}
 
 <a href="{% url 'puzzle_list' %}">Back to Puzzle List</a>
+{% endblock %}

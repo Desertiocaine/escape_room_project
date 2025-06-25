@@ -121,37 +121,41 @@ def puzzle_detail(request, pk):
     return render(request, 'puzzle_detail.html', {'puzzle': puzzle})
 
 def solve_puzzle(request, puzzle_id):
-    puzzle = get_object_or_404(Puzzle, id=puzzle_id)
-    message = ''
+    puzzle = get_object_or_404(Puzzle, pk=puzzle_id)
 
-    if request.method == "POST":
-        user_answer = request.POST.get("answer", "").strip()
-        if user_answer.lower() == puzzle.solution.lower():  # ✅ FIXED from answer to solution
-            puzzle.solved = True
+    if request.method == 'POST':
+        user_answer = request.POST.get('answer', '').strip().lower()
+        correct_answer = puzzle.answer.strip().lower()
+
+        if user_answer == correct_answer:
+            # ✅ Mark this puzzle as solved (you need your own logic here)
+            puzzle.solved = True  # Only if `solved` is a field
             puzzle.save()
 
-            # Try to find the next puzzle in the same room
+            # ✅ Find the next puzzle in the same room
             next_puzzle = Puzzle.objects.filter(
                 room=puzzle.room,
-                order__gt=puzzle.order
-            ).order_by('order').first()
+                id__gt=puzzle.id  # or use an explicit ordering
+            ).order_by('id').first()
 
             if next_puzzle:
-                messages.success(request, "Correct! Moving to next puzzle...")
-                return redirect('solve_puzzle', puzzle_id=next_puzzle.id)
+                # Redirect to next puzzle
+                messages.success(request, "Correct! Moving to the next puzzle.")
+                return redirect('solve_puzzle', puzzle_id=next_puzzle.pk)
             else:
-                return render(request, "solve_puzzle.html", {
-                    "puzzle": puzzle,
-                    "correct": True,
-                    "message": "You completed all puzzles in this room!"
-                })
-        else:
-            message = "Incorrect answer. Please try again."
+                # Last puzzle – redirect to success page
+                messages.success(request, "You've completed all puzzles!")
+                return redirect('puzzle_solved')
 
-    return render(request, "solve_puzzle.html", {
-        "puzzle": puzzle,
-        "message": message
+        else:
+            messages.error(request, "Incorrect answer. Try again.")
+
+    return render(request, 'solve_puzzle.html', {
+        'puzzle': puzzle
     })
+
+def puzzle_solved(request, puzzle_id):
+    return render(request,'puzzle_solved.html')
 
 class PuzzleCreateView(UserPassesTestMixin, CreateView):
     model = Puzzle
@@ -196,7 +200,7 @@ class BookingCreateView(LoginRequiredMixin, CreateView):
 
 class BookingUpdateView(LoginRequiredMixin, UpdateView):
     model = Booking
-    fields = ['room', 'team', 'duration_minutes', 'completed']
+    fields = ['room', 'team', 'duration_minutes']
     template_name = 'booking_form.html'
     success_url = reverse_lazy('booking_list')
 

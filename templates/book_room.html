@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+
+{% block content %}
     <h1>Book a Room</h1>
     {% if user.is_authenticated %}
         <form method="post">
@@ -10,5 +12,4 @@
         <p>Please <a href="{% url 'login' %}">log in</a> to book a room.</p>
     {% endif %}
     <a href="{% url 'members' %}">Back to Members Area</a>
-</body>
-</html>
+{% endblock %}

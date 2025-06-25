@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% if form.instance.pk %}Edit Puzzle{% else %}Create Puzzle{% endif %}</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+
+{% block content %}
     <h1>{% if form.instance.pk %}Edit Puzzle{% else %}Create Puzzle{% endif %}</h1>
     <form method="post">
         {% csrf_token %}
@@ -12,5 +9,4 @@
         <button type="submit">Save</button>
     </form>
     <a href="{% url 'puzzle_list' %}">Back to Puzzle List</a>
-</body>
-</html>
+{% endblock %}

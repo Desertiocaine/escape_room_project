@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Leaderboard</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+
+{% block content %}
     <h1>Leaderboard</h1>
     {% if leaderboard %}
         <table border="1">
@@ -25,5 +22,4 @@
         <p>No leaderboard data available.</p>
     {% endif %}
     <a href="{% url 'home' %}">Back to Home</a>
-</body>
-</html>
+{% endblock %}
