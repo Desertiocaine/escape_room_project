@@ -1,0 +1,166 @@
+/* Home and non-room pages background and text */
+body.home,
+body.browse-rooms,
+body.browse-puzzles,
+body.view-teams,
+body.leaderboard,
+body.login,
+body.register,
+body.view-bookings {
+  background-image: url('../images/home_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  margin: 0;
+  color: #f8f8f8;
+  font-size: 1.3em;
+  text-shadow: 1px 1px 4px #000; /* Optional: subtle shadow for contrast */
+}
+
+/* Make links readable on non-room pages */
+body.home a,
+body.browse-rooms a,
+body.browse-puzzles a,
+body.view-teams a,
+body.leaderboard a,
+body.login a,
+body.view-bookings a,
+body.register a {
+  color: #f8f8f8;
+  text-decoration: underline;
+}
+
+body.home a:visited,
+body.browse-rooms a:visited,
+body.browse-puzzles a:visited,
+body.view-teams a:visited,
+body.leaderboard a:visited,
+body.login a:visited,
+body.view-bookings a:visited,
+body.register a:visited {
+  color: #e0e0e0;
+}
+
+/* Room 1 backgrounds */
+body.room1-room.riddle-1,
+body.room1-room.riddle-2,
+body.room1-room.riddle-3 {
+  background-image: url('../images/room1_bg1.jpg');
+}
+body.room1-room.riddle-4,
+body.room1-room.riddle-5,
+body.room1-room.riddle-6 {
+  background-image: url('../images/room1_bg2.jpg');
+}
+body.room1-room.riddle-7,
+body.room1-room.riddle-8,
+body.room1-room.riddle-9 {
+  background-image: url('../images/room1_bg3.jpg');
+}
+/* Room 2 backgrounds */
+body.room2-room.riddle-1,
+body.room2-room.riddle-2,
+body.room2-room.riddle-3 {
+  background-image: url('../images/room2_bg1.jpg');
+}
+body.room2-room.riddle-4,
+body.room2-room.riddle-5,
+body.room2-room.riddle-6 {
+  background-image: url('../images/room2_bg2.jpg');
+}
+body.room2-room.riddle-7,
+body.room2-room.riddle-8,
+body.room2-room.riddle-9 {
+  background-image: url('../images/room2_bg3.jpg');
+}
+
+/* Room 3 backgrounds */
+body.room3-room.riddle-1,
+body.room3-room.riddle-2,
+body.room3-room.riddle-3 {
+  background-image: url('../images/room3_bg1.jpg');
+}
+body.room3-room.riddle-4,
+body.room3-room.riddle-5,
+body.room3-room.riddle-6 {
+  background-image: url('../images/room3_bg2.jpg');
+}
+body.room3-room.riddle-7,
+body.room3-room.riddle-8,
+body.room3-room.riddle-9 {
+  background-image: url('../images/room3_bg3.jpg');
+}
+
+/* Room 4 backgrounds */
+body.room4-room.riddle-1,
+body.room4-room.riddle-2,
+body.room4-room.riddle-3 {
+  background-image: url('../images/room4_bg1.jpg');
+}
+body.room4-room.riddle-4,
+body.room4-room.riddle-5,
+body.room4-room.riddle-6 {
+  background-image: url('../images/room4_bg2.jpg');
+}
+body.room4-room.riddle-7,
+body.room4-room.riddle-8,
+body.room4-room.riddle-9 {
+  background-image: url('../images/room4_bg3.jpg');
+}
+
+/* Room 5 backgrounds */
+body.room5-room.riddle-1,
+body.room5-room.riddle-2,
+body.room5-room.riddle-3 {
+  background-image: url('../images/room5_bg1.jpg');
+}
+body.room5-room.riddle-4,
+body.room5-room.riddle-5,
+body.room5-room.riddle-6 {
+  background-image: url('../images/room5_bg2.jpg');
+}
+body.room5-room.riddle-7,
+body.room5-room.riddle-8,
+body.room5-room.riddle-9 {
+  background-image: url('../images/room5_bg3.jpg');
+}
+
+/* Creepy shake animation for answer box */
+@keyframes creepyShake {
+  0% { transform: rotate(0deg) scale(1); }
+  20% { transform: rotate(-5deg) scale(1.05); }
+  40% { transform: rotate(5deg) scale(1.1); }
+  60% { transform: rotate(-5deg) scale(1.05); }
+  80% { transform: rotate(5deg) scale(1.1); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+.answer-box.clicked {
+  animation: creepyShake 0.5s;
+}
+/* Fade-out and fade-in transitions for question/answer container */
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.7s;
+  pointer-events: none;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.7s;
+}
+
+body[class*="room"] {
+  color: #f8f8f8;
+  font-size: 1.3em;
+  text-shadow: 1px 1px 4px #000;
+}
+
+body[class*="room"] a {
+  color: #f8f8f8;
+  text-decoration: underline;
+}
+body[class*="room"] a:visited {
+  color: #e0e0e0;
+}

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <title>Escape Room</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<body>
+<body class="{% block body_class %}{% endblock %}">
     <nav>
         <a href="{% url 'home' %}">Home</a> |
         <a href="{% url 'room_list' %}">Rooms</a> |
@@ -14,5 +16,13 @@
     </nav>
     <hr>
     {% block content %}{% endblock %}
+
+    <!-- Jumpscare overlay (hidden by default) -->
+    <div id="jumpscare" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:black; z-index:9999; justify-content:center; align-items:center;">
+      <img src="{% static 'images/jumpscare.jpg' %}" alt="Jumpscare" style="width:100vw; height:100vh; object-fit:cover;">
+      <audio id="jumpscare-audio" src="{% static 'audio/jumpscare.mp3' %}"></audio>
+    </div>
+
+    <script src="{% static 'js/room.js' %}"></script>
 </body>
 </html>

@@ -1,19 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Team List</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block body_class %}view-teams{% endblock %}
+
+{% block content %}
     <h1>Teams</h1>
     <ul>
         {% for team in teams %}
-            <li><a href="{%  url 'team_detail' team.pk %}">{{ team.name }}</a></li>
+            <li><a href="{% url 'team_detail' team.pk %}">{{ team.name }}</a></li>
         {% endfor %}
-
         {% if user.is_staff %}
-            <a href=" {% url 'team_create' %}">Create Team</a>
-        <{% endif %}
+            <li><a href="{% url 'team_create' %}">Create Team</a></li>
+        {% endif %}
     </ul>
-</body>
-</html>
+{% endblock %}

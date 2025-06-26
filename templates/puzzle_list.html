@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Puzzle List</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block body_class %}browse-puzzles{% endblock %}
+
+{% block content %}
     <h1>Puzzle List</h1>
     <ul>
         {% for puzzle in puzzles %}
@@ -16,5 +14,4 @@
             <li>No puzzles available.</li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}

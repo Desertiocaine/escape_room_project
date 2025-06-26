@@ -2,6 +2,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
+from django.http import JsonResponse
 
 # --- Django Auth Imports ---
 from django.contrib.auth.models import User
@@ -25,7 +26,7 @@ from .serializers import RoomSerializer, PuzzleSerializer, BookingSerializer, Te
 # ===========================
 
 def home(request):
-    return render(request, 'index.html')
+    return render(request, 'home.html')
 
 @login_required
 def teams(request):
@@ -115,9 +116,26 @@ def puzzle_list(request):
     puzzles = Puzzle.objects.all()
     return render(request, 'puzzle_list.html', {'puzzles': puzzles})
 
-def puzzle_detail(request, pk):
-    puzzle = get_object_or_404(Puzzle, pk=pk)
-    return render(request, 'puzzle_detail.html', {'puzzle': puzzle})
+def puzzle_detail(request, room_id, puzzle_id):
+    # ...get room and puzzle as before...
+    if request.method == "POST" and request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        answer = request.POST.get('answer', '').strip()
+        correct = (answer.lower() == puzzle.solution.lower())
+        if correct:
+            # Get next puzzle or set finished
+            next_puzzle = ... # your logic here
+            if next_puzzle:
+                return JsonResponse({
+                    'correct': True,
+                    'next_question': next_puzzle.question,
+                    'next_description': next_puzzle.description,
+                    'next_name': next_puzzle.name,
+                    'next_order': next_puzzle.order,
+                })
+            else:
+                return JsonResponse({'correct': True, 'finished': True})
+        else:
+            return JsonResponse({'correct': False})
 
 def solve_puzzle(request, puzzle_id):
     puzzle = get_object_or_404(Puzzle, id=puzzle_id)
@@ -193,6 +211,14 @@ def team_detail(request, pk):
     team = get_object_or_404(Team, pk=pk)
     members = team.members.all()
     return render(request, 'team_detail.html', {'team': team, 'members': members})
+
+def leaderboard(request):
+    # Example data; replace with real logic as needed
+    leaderboard = [
+        {'team_name': 'Team Alpha', 'score': 100},
+        {'team_name': 'Team Beta', 'score': 80},
+    ]
+    return render(request, 'leaderboard_view.html', {'leaderboard': leaderboard})
 
 class TeamCreateView(UserPassesTestMixin, CreateView):
     model = Team

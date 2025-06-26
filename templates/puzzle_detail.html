@@ -1,15 +1,24 @@
-{% if puzzle %}
-    <h1>{{ puzzle.name }}</h1>
-    <p>{{ puzzle.description }}</p>
+{% extends 'base.html' %}
 
-    <h2>Submit Your Answer</h2>
-    <form method="post" action="{% url 'solve_puzzle' puzzle.id %}">
-        {% csrf_token %}
-        <input type="text" name="answer" placeholder="Make your guess" required>
-        <button type="submit">Submit</button>
-    </form>
-{% else %}
-    <h1>You survived!</h1>
-{% endif %}
+{% block body_class %}room{{ room.id }}-room riddle-{{ puzzle.order }}{% endblock %}
 
-<a href="{% url 'puzzle_list' %}">Back to Puzzle List</a>
+{% block content %}
+    <h1>{{ room.name }}</h1>
+    <p>{{ room.description }}</p>
+    <p>Max players: {{ room.max_players }}</p>
+
+    {% if puzzle %}
+      <div class="qa-container">
+        <h2>{{ puzzle.name }}</h2>
+        <p><strong>Riddle:</strong> {{ puzzle.question }}</p>
+        <p>{{ puzzle.description }}</p>
+        <form id="answer-form" method="post">
+          {% csrf_token %}
+          <input type="text" name="answer" placeholder="Make your guess" class="answer-box">
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    {% else %}
+      <p>You survived!</p>
+    {% endif %}
+{% endblock %}
