@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Delete Team: {{  object.name }}</h1>
+    <h1>Delete Puzzle</h1>
+    <p>Are you sure you want to delete the puzzle "{{  object.question }}"?</p>
+
     <form method="post">
         {% csrf_token %}
-        <p>Are you sure you want to delete "{{ object.name }}"?</p>
         <button type="submit">Yes, delete</button>
+        <a href="{% url 'puzzle_detail' object.pk %}">Cancel</a>
     </form>
-    <a href="{% url 'team_list' %}">Cancel</a>
 {% endblock %}

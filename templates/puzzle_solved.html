@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1>Puzzle Solved!</h1>
+    <p>Great job, {{ user.username }}</p>
+
+    {% if next_puzzle %}
+        <a href="{% url 'solved_puzzle' next_puzzle.pk %}">Continue to Next Puzzle</a>
+    {% else %}
+        <p>Congratulations! All puzzles in this room have been solved.</p>
+        <a href="{% url 'room_detail' room.pk %}">Return to Escape Rooms</a>
+    {% endif %}
+{% endblock %}

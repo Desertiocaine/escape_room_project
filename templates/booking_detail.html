@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Booking Details</h2>
+
+    <ul>
+        <li><strong>Team:</strong> {{ booking.team.name }}</li>
+        <li><strong>Room:</strong> {{ booking.room.name }}</li>
+        <li><strong>Booking Time:</strong> {{ booking.booking_time }}</li>
+        <li><strong>Completed:</strong> {{ booking.completed|yesno:"Yes,No" }}</li>
+        <li><strong>Duration:</strong> {{ booking.duration_minutes }}</li>
+    </ul>
+
+    <div class="actions">
+        <a href="{% url 'booking_update' booking.pk %}">Edit Booking</a> |
+        <a href="{% url 'booking_delete' booking.pk %}">Delete Booking</a> |
+        <a href="{% url 'booking_list' %}">Back to Booking</a>
+    </div>
+{% endblock %}

@@ -10,6 +10,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib import messages
 
 # --- Django Generic Views ---
 from django.views.generic import CreateView, UpdateView, DeleteView
@@ -29,7 +30,7 @@ def home(request):
     return render(request, 'home.html')
 
 @login_required
-def teams(request):
+def team_list(request):
     teams = Team.objects.all()
     return render(request, 'teams.html', {'teams': teams})
 
@@ -52,6 +53,14 @@ def create_puzzle(request):
 @login_required
 def members(request):
     return render(request, 'members.html')
+
+@login_required
+def join_team(request, pk):
+    team = get_object_or_404(Team, pk=pk)
+    team.members.add(request.user)
+    team.save()
+    messages.success(request,f"You joined the team: {team.name}")
+    return redirect('team_list')
 
 def register(request):
     if request.method == "POST":
@@ -138,14 +147,41 @@ def puzzle_detail(request, room_id, puzzle_id):
             return JsonResponse({'correct': False})
 
 def solve_puzzle(request, puzzle_id):
-    puzzle = get_object_or_404(Puzzle, id=puzzle_id)
-    if request.method == "POST":
-        user_answer = request.POST.get("answer", "").strip()
-        if user_answer.lower() == puzzle.answer.lower():
-            return render(request, "puzzle_solved.html", {"puzzle": puzzle, "correct": True})
+    puzzle = get_object_or_404(Puzzle, pk=puzzle_id)
+
+    if request.method == 'POST':
+        user_answer = request.POST.get('answer', '').strip().lower()
+        correct_answer = puzzle.answer.strip().lower()
+
+        if user_answer == correct_answer:
+            # ✅ Mark this puzzle as solved (you need your own logic here)
+            puzzle.solved = True  # Only if `solved` is a field
+            puzzle.save()
+
+            # ✅ Find the next puzzle in the same room
+            next_puzzle = Puzzle.objects.filter(
+                room=puzzle.room,
+                id__gt=puzzle.id  # or use an explicit ordering
+            ).order_by('id').first()
+
+            if next_puzzle:
+                # Redirect to next puzzle
+                messages.success(request, "Correct! Moving to the next puzzle.")
+                return redirect('solve_puzzle', puzzle_id=next_puzzle.pk)
+            else:
+                # Last puzzle – redirect to success page
+                messages.success(request, "You've completed all puzzles!")
+                return redirect('puzzle_solved')
+
         else:
-            return render(request, "puzzle_solved.html", {"puzzle": puzzle, "correct": False})
-    return HttpResponseRedirect(reverse("room_detail", args=[puzzle.room.id]))
+            messages.error(request, "Incorrect answer. Try again.")
+
+    return render(request, 'solve_puzzle.html', {
+        'puzzle': puzzle
+    })
+
+def puzzle_solved(request):
+    return render(request,'puzzle_solved.html')
 
 class PuzzleCreateView(UserPassesTestMixin, CreateView):
     model = Puzzle
@@ -184,13 +220,13 @@ def booking_detail(request, pk):
 
 class BookingCreateView(LoginRequiredMixin, CreateView):
     model = Booking
-    fields = ['user', 'room', 'booking_time']
+    fields = ['team', 'room', 'duration_minutes']
     template_name = 'booking_form.html'
     success_url = reverse_lazy('booking_list')
 
 class BookingUpdateView(LoginRequiredMixin, UpdateView):
     model = Booking
-    fields = ['user', 'room', 'booking_time']
+    fields = ['room', 'team', 'duration_minutes']
     template_name = 'booking_form.html'
     success_url = reverse_lazy('booking_list')
 
@@ -203,7 +239,7 @@ class BookingDeleteView(LoginRequiredMixin, DeleteView):
 # TEAM VIEWS
 # ===========================
 
-def team_list(request):
+def team_list_view(request):
     teams = Team.objects.all()
     return render(request, 'team_list.html', {'teams': teams})
 
@@ -244,7 +280,7 @@ class TeamDeleteView(UserPassesTestMixin, DeleteView):
         return self.request.user.is_staff
 
 # ===========================
-# DRF VIEWSETS
+# DRF VIEW SETS
 # ===========================
 
 class RoomViewSet(viewsets.ModelViewSet):

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li style="color: {% if message.tags == 'error' %}red{% else %}green{% endif %};">
+                {{ message }}
+            </li>
+        {% endfor %}
+        </ul>
+    {%  endif %}
+    <a href="{% url 'booking_list' %}">Back to Bookings</a> |
+    <a href="{% url 'room_list' %}">Back to Rooms</a> |
+    <a href="{% url 'members' %}">Back to Member's Area</a>
+{% endblock %}

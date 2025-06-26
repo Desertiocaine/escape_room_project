@@ -6,19 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d9b723c2-d1cd-4b92-85a7-8fd68affec05" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DjangoProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Escape_room/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Escape_room/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Escape_room/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Escape_room/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/booking_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/booking_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/puzzle_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/puzzle_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/puzzle_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/puzzle_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/room_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/room_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/room_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/room_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/team_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/team_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +43,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.DjangoProject.executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -78,6 +68,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="DjangoProject.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -99,8 +90,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-PY-251.26094.141" />
-        <option value="bundled-python-sdk-9f8e2b94138c-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.26094.141" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-PY-251.25410.159" />
+        <option value="bundled-python-sdk-e0ed3721d81e-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.25410.159" />
       </set>
     </attachedChunks>
   </component>
@@ -122,22 +113,31 @@
       <workItem from="1749824768207" duration="26000" />
       <workItem from="1750207186227" duration="1782000" />
       <workItem from="1750393695541" duration="5232000" />
-      <workItem from="1750461983339" duration="8000" />
-      <workItem from="1750602662741" duration="13345000" />
-      <workItem from="1750619970244" duration="825000" />
-      <workItem from="1750800144127" duration="110000" />
-      <workItem from="1750843452209" duration="2997000" />
+      <workItem from="1750813637037" duration="8268000" />
+      <workItem from="1750825266598" duration="7914000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Escape_room/serializers.py</url>
+          <line>1</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

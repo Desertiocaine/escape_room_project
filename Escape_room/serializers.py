@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Room, Puzzle, Booking, Team
+from .models import Room, Puzzle, Team, Booking
 
 class RoomSerializer(serializers.ModelSerializer):
     class Meta:

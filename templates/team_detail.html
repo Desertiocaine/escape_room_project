@@ -1,22 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ team.name }}</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
     <h1>Team: {{ team.name }}</h1>
     <h2>Members:</h2>
     <ul>
         {% for member in members %}
             <li>{{ member.username }}</li>
+        {% empty %}
+            <li>No members in this team yet.</li>
         {% endfor %}
 
+        <a href="{% url 'team_detail' team.pk %}">{{ team.name }}</a>
+
         {% if user.is_staff %}
+            <p>
             <a href="{% url 'team_update' team.pk %}">Edit</a>
-            <a href="{% url 'team_delete' team.pok %}">Delete</a>
+            <a href="{% url 'team_delete' team.pk %}">Delete</a>
+            </p>
         {% endif %}
     </ul>
     <a href="{% url 'team_list' %}">Back to Team List</a>
-</body>
-</html>
+{% endblock %}

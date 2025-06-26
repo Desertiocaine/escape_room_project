@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 class Room(models.Model):
     """Represents an escape room with its details."""
@@ -25,7 +26,7 @@ class Puzzle(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
     question = models.TextField(default="")
-    solution = models.CharField(max_length=255)
+    answer = models.CharField(max_length=255)
     order = models.PositiveIntegerField(default=1)
     solved = models.BooleanField(default=False)
 
@@ -43,7 +44,7 @@ class Booking(models.Model):
     """Represents a booking for a team in a room."""
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
-    booking_time = models.DateTimeField()
+    booking_time = models.DateTimeField(default=timezone.now)
     duration_minutes = models.PositiveIntegerField(default=60)
     completed = models.BooleanField(default=False)
 

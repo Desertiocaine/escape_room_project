@@ -38,6 +38,7 @@ urlpatterns = [
     path('puzzles/<int:pk>/edit/', views.PuzzleUpdateView.as_view(), name='puzzle_update'),
     path('puzzles/<int:pk>/delete/', views.PuzzleDeleteView.as_view(), name='puzzle_delete'),
     path('puzzles/<int:puzzle_id>/solve/', views.solve_puzzle, name='solve_puzzle'),
+    path('puzzles/solved/', views.puzzle_solved, name='solved_puzzles'),
     path('create-puzzle/', views.create_puzzle, name='create_puzzle'),
 
     # Booking views
@@ -54,7 +55,8 @@ urlpatterns = [
     path('teams/create/', views.TeamCreateView.as_view(), name='team_create'),
     path('teams/<int:pk>/edit/', views.TeamUpdateView.as_view(), name='team_update'),
     path('teams/<int:pk>/delete/', views.TeamDeleteView.as_view(), name='team_delete'),
-    path('teams/pick/', views.teams, name='teams'),  # For member team picking
+    path('teams/pick/', views.team_list_view, name='teams'),  # For member team picking
+    path('teams/<int:pk>/join/', views.join_team, name='join_team'),
 
     # Games
     path('games/', views.games, name='games'),
