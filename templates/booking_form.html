@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="container booking-form-container">
   <h1>Create a Booking</h1>
   <form method="post" class="booking-form">
     {% csrf_token %}
@@ -25,7 +26,8 @@
         </tr>
       {% endfor %}
     </table>
-    <button type="submit">Book</button>
+    <button type="submit" class="btn-primary">Book</button>
     <a href="{% url 'booking_list' %}" class="btn-cancel">Cancel</a>
   </form>
+</div>
 {% endblock %}

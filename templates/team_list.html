@@ -3,8 +3,9 @@
 {% block body_class %}view-teams{% endblock %}
 
 {% block content %}
+<div class="container teams-list">
     <h1>Teams</h1>
-    <ul>
+    <ul class="styled-list">
         {% for team in teams %}
             <li><a href="{% url 'team_detail' team.pk %}">{{ team.name }}</a></li>
         {% endfor %}
@@ -12,4 +13,5 @@
             <li><a href="{% url 'team_create' %}">Create Team</a></li>
         {% endif %}
     </ul>
+</div>
 {% endblock %}

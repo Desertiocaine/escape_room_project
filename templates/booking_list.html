@@ -3,6 +3,7 @@
 {% block body_class %}view-bookings{% endblock %}
 
 {% block content %}
+<div class="container booking-list">
     <h2>Booking List</h2>
     <ul>
         {% for booking in bookings %}
@@ -15,5 +16,8 @@
             <li>No bookings found.</li>
         {% endfor %}
     </ul>
-    <a href="{% url 'booking_create' %}">Create New Booking</a>
+    {% if user.is_authenticated %}
+        <a href="{% url 'booking_create' %}">Create New Booking</a>
+    {% endif %}
+</div>
 {% endblock %}

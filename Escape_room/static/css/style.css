@@ -31,6 +31,8 @@ body.register a {
   text-decoration: underline;
 }
 
+
+
 body.home a:visited,
 body.browse-rooms a:visited,
 body.browse-puzzles a:visited,
@@ -40,6 +42,113 @@ body.login a:visited,
 body.view-bookings a:visited,
 body.register a:visited {
   color: #e0e0e0;
+}
+body.register-bg {
+    background: url('../images/register-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+.booking-detail,
+.booking-form-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-bottom: 0.5rem;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.6em 1.2em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+.btn-cancel {
+  background: #eee;
+  color: #333;
+  border: none;
+  padding: 0.6em 1.2em;
+  border-radius: 4px;
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+.btn-cancel:hover {
+  background: #ccc;
+}
+.teams-list {
+  background: #f5f7fa;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  max-width: 600px;
+  margin: 2rem auto;
+}
+.styled-list li {
+  margin-bottom: 1rem;
+}
+.styled-list a {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 500;
+}
+.styled-list a:hover {
+  text-decoration: underline;
+}
+
+.team-detail {
+  background: #f5f7fa;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.container.booking-list {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.booking-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.booking-list li {
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.booking-list a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.booking-list a:hover {
+    text-decoration: underline;
 }
 
 /* Room 1 backgrounds */

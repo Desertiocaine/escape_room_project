@@ -7,7 +7,6 @@
     <ul>
         {% for team in teams %}
             <li>
-                <!-- Link team name to detail page -->
                 <a href="{% url 'team_detail' team.pk %}">{{ team.name }}</a>
                 ({{ team.members.count }} members)
 
@@ -25,7 +24,9 @@
         {% endfor %}
     </ul>
 
-    <a href="{% url 'team_create' %}">Create Team</a>
+    {% if user.is_staff %}
+        <a href="{% url 'team_create' %}">Create Team</a>
+    {% endif %}
 {% else %}
     <p>Please <a href="{% url 'login' %}">log in</a> to view and join teams.</p>
 {% endif %}
