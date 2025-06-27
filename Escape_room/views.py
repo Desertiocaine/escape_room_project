@@ -1,8 +1,7 @@
 # --- Standard Library Imports ---
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy, reverse
-from django.http import HttpResponseRedirect
-from django.http import JsonResponse
+from django.http import HttpResponseRedirect, JsonResponse
 
 # --- Django Auth Imports ---
 from django.contrib.auth.models import User
@@ -59,7 +58,7 @@ def join_team(request, pk):
     team = get_object_or_404(Team, pk=pk)
     team.members.add(request.user)
     team.save()
-    messages.success(request,f"You joined the team: {team.name}")
+    messages.success(request, f"You joined the team: {team.name}")
     return redirect('team_list')
 
 def register(request):
@@ -83,16 +82,22 @@ def room_list(request):
 
 def room_detail(request, room_id):
     room = get_object_or_404(Room, id=room_id)
-    # Get the next unsolved puzzle for this room
     puzzle = Puzzle.objects.filter(room=room, solved=False).first()
+    # Support for room-specific backgrounds
+    background_images = room.background_images()
+    puzzle_order = puzzle.order if puzzle else 1
     if request.method == 'POST' and puzzle:
         answer = request.POST.get('answer')
         if answer and answer.strip().lower() == puzzle.answer.lower():
             puzzle.solved = True
             puzzle.save()
-            # Get the next unsolved puzzle after solving
             puzzle = Puzzle.objects.filter(room=room, solved=False).first()
-    return render(request, 'room_detail.html', {'room': room, 'puzzle': puzzle})
+    return render(request, 'room_detail.html', {
+        'room': room,
+        'puzzle': puzzle,
+        'background_images': background_images,
+        'puzzle_order': puzzle_order,
+    })
 
 class RoomCreateView(UserPassesTestMixin, CreateView):
     model = Room
@@ -148,40 +153,28 @@ def puzzle_detail(request, room_id, puzzle_id):
 
 def solve_puzzle(request, puzzle_id):
     puzzle = get_object_or_404(Puzzle, pk=puzzle_id)
-
     if request.method == 'POST':
         user_answer = request.POST.get('answer', '').strip().lower()
         correct_answer = puzzle.answer.strip().lower()
-
         if user_answer == correct_answer:
-            # ✅ Mark this puzzle as solved (you need your own logic here)
-            puzzle.solved = True  # Only if `solved` is a field
+            puzzle.solved = True
             puzzle.save()
-
-            # ✅ Find the next puzzle in the same room
             next_puzzle = Puzzle.objects.filter(
                 room=puzzle.room,
-                id__gt=puzzle.id  # or use an explicit ordering
+                id__gt=puzzle.id
             ).order_by('id').first()
-
             if next_puzzle:
-                # Redirect to next puzzle
                 messages.success(request, "Correct! Moving to the next puzzle.")
                 return redirect('solve_puzzle', puzzle_id=next_puzzle.pk)
             else:
-                # Last puzzle – redirect to success page
                 messages.success(request, "You've completed all puzzles!")
                 return redirect('puzzle_solved')
-
         else:
             messages.error(request, "Incorrect answer. Try again.")
-
-    return render(request, 'solve_puzzle.html', {
-        'puzzle': puzzle
-    })
+    return render(request, 'solve_puzzle.html', {'puzzle': puzzle})
 
 def puzzle_solved(request):
-    return render(request,'puzzle_solved.html')
+    return render(request, 'puzzle_solved.html')
 
 class PuzzleCreateView(UserPassesTestMixin, CreateView):
     model = Puzzle
@@ -249,7 +242,6 @@ def team_detail(request, pk):
     return render(request, 'team_detail.html', {'team': team, 'members': members})
 
 def leaderboard(request):
-    # Example data; replace with real logic as needed
     leaderboard = [
         {'team_name': 'Team Alpha', 'score': 100},
         {'team_name': 'Team Beta', 'score': 80},

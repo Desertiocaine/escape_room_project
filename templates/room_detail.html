@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block body_class %}room-detail{% endblock %}
 
 {% block content %}
@@ -17,4 +18,19 @@
       <img src="/static/img/jumpscare.png" alt="Jumpscare" style="max-width:100vw; max-height:100vh;">
     </div>
     <audio id="jumpscare-audio" src="/static/audio/jumpscare.mp3"></audio>
+    {% if background_images %}
+      {% if puzzle_order <= 3 %}
+        {% with bg=background_images.0 %}
+          <img src="{% static bg %}" class="room-bg" alt="Room background">
+        {% endwith %}
+      {% elif puzzle_order <= 6 %}
+        {% with bg=background_images.1 %}
+          <img src="{% static bg %}" class="room-bg" alt="Room background">
+        {% endwith %}
+      {% else %}
+        {% with bg=background_images.2 %}
+          <img src="{% static bg %}" class="room-bg" alt="Room background">
+        {% endwith %}
+      {% endif %}
+    {% endif %}
 {% endblock %}
