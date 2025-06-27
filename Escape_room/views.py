@@ -147,7 +147,8 @@ def puzzle_list(request):
     return render(request, 'puzzle_list.html', {'puzzles': puzzles})
 
 def puzzle_detail(request, room_id, puzzle_id):
-    # ...get room and puzzle as before...
+    room = get_object_or_404(Room, pk=room_id)
+    puzzle = get_object_or_404(Puzzle, pk=puzzle_id, room=room)
     if request.method == "POST" and request.headers.get('x-requested-with') == 'XMLHttpRequest':
         answer = request.POST.get('answer', '').strip()
         correct = (answer.lower() == puzzle.solution.lower())

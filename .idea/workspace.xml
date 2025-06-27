@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d9b723c2-d1cd-4b92-85a7-8fd68affec05" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Escape_room/fixtures/initial_rooms.json" beforeDir="false" afterPath="$PROJECT_DIR$/Escape_room/fixtures/initial_rooms.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Escape_room/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Escape_room/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Escape_room/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Escape_room/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Escape_room/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Escape_room/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/puzzle_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/puzzle_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/room_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/room_detail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +117,7 @@
       <workItem from="1750908808301" duration="20000" />
       <workItem from="1750960256268" duration="2682000" />
       <workItem from="1750979838642" duration="6572000" />
-      <workItem from="1751031950525" duration="7656000" />
+      <workItem from="1751031950525" duration="11937000" />
     </task>
     <servers />
   </component>
