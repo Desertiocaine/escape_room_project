@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
-
-{% block body_class %}room{{ room.id }}-room riddle-{{ puzzle.order }}{% endblock %}
+{% block body_class %}room-detail{% endblock %}
 
 {% block content %}
     <h1>{{ room.name }}</h1>
@@ -14,4 +13,8 @@
             <button type="submit">Submit</button>
         </form>
     </div>
+    <div id="jumpscare" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; justify-content:center; align-items:center; background:black; z-index:9999;">
+      <img src="/static/img/jumpscare.png" alt="Jumpscare" style="max-width:100vw; max-height:100vh;">
+    </div>
+    <audio id="jumpscare-audio" src="/static/audio/jumpscare.mp3"></audio>
 {% endblock %}

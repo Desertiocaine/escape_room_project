@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9b723c2-d1cd-4b92-85a7-8fd68affec05" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/DjangoProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DjangoProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Escape_room/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Escape_room/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/booking_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/booking_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/booking_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/booking_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/booking_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/booking_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/team_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/team_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/room_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/room_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/room_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/room_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/team_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/team_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/team_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/team_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/teams.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teams.html" afterDir="false" />
     </list>
@@ -124,7 +124,8 @@
       <workItem from="1750813637037" duration="8268000" />
       <workItem from="1750825266598" duration="7914000" />
       <workItem from="1750908808301" duration="20000" />
-      <workItem from="1750960256268" duration="1644000" />
+      <workItem from="1750960256268" duration="2682000" />
+      <workItem from="1750979838642" duration="2924000" />
     </task>
     <servers />
   </component>

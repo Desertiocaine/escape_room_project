@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% block body_class %}team-update{% endblock %}
 {% block content %}
     <h1>{% if form.instance.pk %}Edit Team {% else %}Create Team{% endif %}</h1>
     <form method="post">

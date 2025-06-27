@@ -5,6 +5,23 @@
     <meta charset="UTF-8">
     <title>Escape Room</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        #jumpscare {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+        }
+        #jumpscare.active {
+            display: flex;
+            background: black;
+            pointer-events: auto;
+        }
+    </style>
 </head>
 <body class="{% block body_class %}{% endblock %}">
     <nav>
@@ -18,11 +35,26 @@
     {% block content %}{% endblock %}
 
     <!-- Jumpscare overlay (hidden by default) -->
-    <div id="jumpscare" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:black; z-index:9999; justify-content:center; align-items:center;">
+    <div id="jumpscare">
       <img src="{% static 'images/jumpscare.jpg' %}" alt="Jumpscare" style="width:100vw; height:100vh; object-fit:cover;">
       <audio id="jumpscare-audio" src="{% static 'audio/jumpscare.mp3' %}"></audio>
     </div>
 
+    <script>
+    function triggerJumpscare() {
+        const jumpscare = document.getElementById('jumpscare');
+        const audio = document.getElementById('jumpscare-audio');
+        jumpscare.classList.add('active');
+        audio.play();
+        setTimeout(() => {
+            jumpscare.classList.remove('active');
+            audio.pause();
+            audio.currentTime = 0;
+        }, 2000);
+    }
+    // Example: call triggerJumpscare() when needed
+    // triggerJumpscare();
+    </script>
     <script src="{% static 'js/room.js' %}"></script>
 </body>
 </html>

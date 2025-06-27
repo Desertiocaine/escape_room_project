@@ -235,6 +235,23 @@ body.room5-room.riddle-9 {
   background-image: url('../images/room5_bg3.jpg');
 }
 
+/* Room 6 backgrounds */
+body.room6-room.riddle-1,
+body.room6-room.riddle-2,
+body.room6-room.riddle-3 {
+  background-image: url('../images/room6_bg1.jpg');
+}
+body.room6-room.riddle-4,
+body.room6-room.riddle-5,
+body.room6-room.riddle-6 {
+  background-image: url('../images/room6_bg2.jpg');
+}
+body.room6-room.riddle-7,
+body.room6-room.riddle-8,
+body.room6-room.riddle-9 {
+  background-image: url('../images/room6_bg3.jpg');
+}
+
 /* Creepy shake animation for answer box */
 @keyframes creepyShake {
   0% { transform: rotate(0deg) scale(1); }
