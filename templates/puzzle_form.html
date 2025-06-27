@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+{% block body_class %}puzzle-form{% endblock %}
 
 {% block content %}
     <h1>{% if form.instance.pk %}Edit Puzzle{% else %}Create Puzzle{% endif %}</h1>
