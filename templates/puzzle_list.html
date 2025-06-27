@@ -4,14 +4,5 @@
 
 {% block content %}
     <h1>Puzzle List</h1>
-    <ul>
-        {% for puzzle in puzzles %}
-            <li>
-                <strong>{{ puzzle.name }}</strong><br>
-                {{ puzzle.description }}
-            </li>
-        {% empty %}
-            <li>No puzzles available.</li>
-        {% endfor %}
-    </ul>
+    <p>Puzzles are only available within their respective rooms. Please visit a room to solve its puzzles.</p>
 {% endblock %}

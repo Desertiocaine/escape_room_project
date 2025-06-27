@@ -60,4 +60,5 @@ urlpatterns = [
 
     # Games
     path('games/', views.games, name='games'),
+    path('rooms/<int:room_id>/restart/', views.restart_room, name='restart_room'),
 ]

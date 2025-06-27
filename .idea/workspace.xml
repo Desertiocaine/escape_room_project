@@ -6,22 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="d9b723c2-d1cd-4b92-85a7-8fd68affec05" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/book_room.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/book_room.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/booking_confirm_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/booking_confirm_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/create_puzzle.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/create_puzzle.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/create_room.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/create_room.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/games.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/games.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/leaderboard_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/leaderboard_view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/members.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/members.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/puzzle_confirm_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/puzzle_confirm_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/puzzle_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/puzzle_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/puzzle_solved.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/puzzle_solved.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/room_confirm_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/room_confirm_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/room_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/room_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/solve_puzzle.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/solve_puzzle.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/team_confirm_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/team_confirm_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/team_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/team_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Escape_room/fixtures/initial_rooms.json" beforeDir="false" afterPath="$PROJECT_DIR$/Escape_room/fixtures/initial_rooms.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Escape_room/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Escape_room/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Escape_room/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Escape_room/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Escape_room/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Escape_room/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/puzzle_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/puzzle_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/room_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/room_detail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +123,8 @@
       <workItem from="1750825266598" duration="7914000" />
       <workItem from="1750908808301" duration="20000" />
       <workItem from="1750960256268" duration="2682000" />
-      <workItem from="1750979838642" duration="5221000" />
+      <workItem from="1750979838642" duration="6572000" />
+      <workItem from="1751031950525" duration="7656000" />
     </task>
     <servers />
   </component>

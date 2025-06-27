@@ -7,7 +7,7 @@ body.leaderboard,
 body.login,
 body.register,
 body.view-bookings {
-  background-image: url('../images/home_bg.jpg');
+  background-image: url('../img/home_bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -44,7 +44,7 @@ body.register a:visited {
   color: #e0e0e0;
 }
 body.register-bg {
-    background: url('../images/register-bg.jpg') no-repeat center center fixed;
+    background: url('../img/register-bg.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 .booking-detail,
@@ -92,6 +92,15 @@ body.register-bg {
 
 .btn-cancel:hover {
   background: #ccc;
+}
+.room-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
 }
 .teams-list {
   background: #f5f7fa;
@@ -155,101 +164,101 @@ body.register-bg {
 body.room1-room.riddle-1,
 body.room1-room.riddle-2,
 body.room1-room.riddle-3 {
-  background-image: url('../images/room1_bg1.jpg');
+  background-image: url('../img/room1_bg1.jpg');
 }
 body.room1-room.riddle-4,
 body.room1-room.riddle-5,
 body.room1-room.riddle-6 {
-  background-image: url('../images/room1_bg2.jpg');
+  background-image: url('../img/room1_bg2.jpg');
 }
 body.room1-room.riddle-7,
 body.room1-room.riddle-8,
 body.room1-room.riddle-9 {
-  background-image: url('../images/room1_bg3.jpg');
+  background-image: url('../img/room1_bg3.jpg');
 }
 /* Room 2 backgrounds */
 body.room2-room.riddle-1,
 body.room2-room.riddle-2,
 body.room2-room.riddle-3 {
-  background-image: url('../images/room2_bg1.jpg');
+  background-image: url('../img/room2_bg1.jpg');
 }
 body.room2-room.riddle-4,
 body.room2-room.riddle-5,
 body.room2-room.riddle-6 {
-  background-image: url('../images/room2_bg2.jpg');
+  background-image: url('../img/room2_bg2.jpg');
 }
 body.room2-room.riddle-7,
 body.room2-room.riddle-8,
 body.room2-room.riddle-9 {
-  background-image: url('../images/room2_bg3.jpg');
+  background-image: url('../img/room2_bg3.jpg');
 }
 
 /* Room 3 backgrounds */
 body.room3-room.riddle-1,
 body.room3-room.riddle-2,
 body.room3-room.riddle-3 {
-  background-image: url('../images/room3_bg1.jpg');
+  background-image: url('../img/room3_bg1.jpg');
 }
 body.room3-room.riddle-4,
 body.room3-room.riddle-5,
 body.room3-room.riddle-6 {
-  background-image: url('../images/room3_bg2.jpg');
+  background-image: url('../img/room3_bg2.jpg');
 }
 body.room3-room.riddle-7,
 body.room3-room.riddle-8,
 body.room3-room.riddle-9 {
-  background-image: url('../images/room3_bg3.jpg');
+  background-image: url('../img/room3_bg3.jpg');
 }
 
 /* Room 4 backgrounds */
 body.room4-room.riddle-1,
 body.room4-room.riddle-2,
 body.room4-room.riddle-3 {
-  background-image: url('../images/room4_bg1.jpg');
+  background-image: url('../img/room4_bg1.jpg');
 }
 body.room4-room.riddle-4,
 body.room4-room.riddle-5,
 body.room4-room.riddle-6 {
-  background-image: url('../images/room4_bg2.jpg');
+  background-image: url('../img/room4_bg2.jpg');
 }
 body.room4-room.riddle-7,
 body.room4-room.riddle-8,
 body.room4-room.riddle-9 {
-  background-image: url('../images/room4_bg3.jpg');
+  background-image: url('../img/room4_bg3.jpg');
 }
 
 /* Room 5 backgrounds */
 body.room5-room.riddle-1,
 body.room5-room.riddle-2,
 body.room5-room.riddle-3 {
-  background-image: url('../images/room5_bg1.jpg');
+  background-image: url('../img/room5_bg1.jpg');
 }
 body.room5-room.riddle-4,
 body.room5-room.riddle-5,
 body.room5-room.riddle-6 {
-  background-image: url('../images/room5_bg2.jpg');
+  background-image: url('../img/room5_bg2.jpg');
 }
 body.room5-room.riddle-7,
 body.room5-room.riddle-8,
 body.room5-room.riddle-9 {
-  background-image: url('../images/room5_bg3.jpg');
+  background-image: url('../img/room5_bg3.jpg');
 }
 
 /* Room 6 backgrounds */
 body.room6-room.riddle-1,
 body.room6-room.riddle-2,
 body.room6-room.riddle-3 {
-  background-image: url('../images/room6_bg1.jpg');
+  background-image: url('../img/room6_bg1.jpg');
 }
 body.room6-room.riddle-4,
 body.room6-room.riddle-5,
 body.room6-room.riddle-6 {
-  background-image: url('../images/room6_bg2.jpg');
+  background-image: url('../img/room6_bg2.jpg');
 }
 body.room6-room.riddle-7,
 body.room6-room.riddle-8,
 body.room6-room.riddle-9 {
-  background-image: url('../images/room6_bg3.jpg');
+  background-image: url('../img/room6_bg3.jpg');
 }
 
 /* Creepy shake animation for answer box */

@@ -13,6 +13,14 @@ class Room(models.Model):
     def __str__(self):
         return self.name
 
+    def background_images(self):
+        # Returns a list of background image paths for this room
+        return [
+            f'img/room{self.id}_bg1.jpg',
+            f'img/room{self.id}_bg2.jpg',
+            f'img/room{self.id}_bg3.jpg',
+        ]
+
 class Puzzle(models.Model):
     """Represents a puzzle within an escape room."""
     room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name='puzzles')
@@ -43,3 +51,15 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"{self.team.name} booked {self.room.name} at {self.booking_time}"
+
+class RoomProgress(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    room = models.ForeignKey(Room, on_delete=models.CASCADE)
+    completed = models.BooleanField(default=False)
+    last_updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        unique_together = ('user', 'room')
+
+    def __str__(self):
+        return f"{self.user.username} - {self.room.name} progress"
