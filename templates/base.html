@@ -34,10 +34,10 @@
     <hr>
     {% block content %}{% endblock %}
 
-    <!-- Jumpscare overlay (hidden by default) -->
+    <!-- Jumpscare overlay and audio OUTSIDE .qa-container -->
     <div id="jumpscare">
-      <img src="{% static 'img/jumpscare.jpg' %}" alt="Jumpscare" style="width:100vw; height:100vh; object-fit:cover;">
-      <audio id="jumpscare-audio" src="{% static 'audio/jumpscare.mp3' %}"></audio>
+        <img src="{% static 'img/jumpscare.jpg' %}" alt="Jumpscare" style="width:100vw; height:100vh; object-fit:cover;">
+        <audio id="jumpscare-audio" src="{% static 'audio/jumpscare.mp3' %}"></audio>
     </div>
 
     <script>
@@ -52,8 +52,7 @@
             audio.currentTime = 0;
         }, 2000);
     }
-    // Example: call triggerJumpscare() when needed
-    // triggerJumpscare();
+    // Call triggerJumpscare() from your JS when needed
     </script>
     <script src="{% static 'js/room.js' %}"></script>
 </body>

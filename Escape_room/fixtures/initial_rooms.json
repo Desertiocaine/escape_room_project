@@ -60,18 +60,16 @@
     "model": "Escape_room.team",
     "pk": 2,
     "fields": {
-      "name": "Team Beta"
+      "name": "Mavericks"
     }
   },
-
-
   {
     "model": "Escape_room.puzzle",
     "pk": 1,
     "fields": {
-      "name": "Ghostly Riddles",
-      "description": "Solve the riddles to appease the spirits.",
-      "solution": "whisper",
+      "name": "Flickering Lights",
+      "description": "The lights flicker as you enter. What do you do to see better?",
+      "solution": "light a candle",
       "order": 1,
       "room": 1
     }
@@ -80,9 +78,9 @@
     "model": "Escape_room.puzzle",
     "pk": 2,
     "fields": {
-      "name": "Flickering Lights",
-      "description": "The lights flicker as you enter. What do you do to see better?",
-      "solution": "light a candle",
+      "name": "Whispering Shelves",
+      "description": "A whisper tells you to find the oldest book. What year do you look for?",
+      "solution": "1623",
       "order": 2,
       "room": 1
     }
@@ -91,9 +89,9 @@
     "model": "Escape_room.puzzle",
     "pk": 3,
     "fields": {
-      "name": "Whispering Shelves",
-      "description": "A whisper tells you to find the oldest book. What year do you look for?",
-      "solution": "1623",
+      "name": "Locked Drawer",
+      "description": "A drawer is locked with a riddle: 'I have keys but open no locks.'",
+      "solution": "piano",
       "order": 3,
       "room": 1
     }
@@ -102,9 +100,9 @@
     "model": "Escape_room.puzzle",
     "pk": 4,
     "fields": {
-      "name": "Locked Drawer",
-      "description": "A drawer is locked with a riddle: 'I have keys but open no locks.'",
-      "solution": "piano",
+      "name": "Ghostly Footsteps",
+      "description": "You hear footsteps behind you. What do you say to calm the ghost?",
+      "solution": "rest in peace",
       "order": 4,
       "room": 1
     }
@@ -113,9 +111,9 @@
     "model": "Escape_room.puzzle",
     "pk": 5,
     "fields": {
-      "name": "Ghostly Footsteps",
-      "description": "You hear footsteps behind you. What do you say to calm the ghost?",
-      "solution": "rest in peace",
+      "name": "Secret Passage",
+      "description": "A book triggers a secret door. Which book do you pull?",
+      "solution": "mystery novel",
       "order": 5,
       "room": 1
     }
@@ -124,9 +122,9 @@
     "model": "Escape_room.puzzle",
     "pk": 6,
     "fields": {
-      "name": "Secret Passage",
-      "description": "A book triggers a secret door. Which book do you pull?",
-      "solution": "mystery novel",
+      "name": "Haunted Portrait",
+      "description": "A portrait's eyes follow you. What is the subject's name?",
+      "solution": "elizabeth",
       "order": 6,
       "room": 1
     }
@@ -135,9 +133,9 @@
     "model": "Escape_room.puzzle",
     "pk": 7,
     "fields": {
-      "name": "Haunted Portrait",
-      "description": "A portrait's eyes follow you. What is the subject's name?",
-      "solution": "elizabeth",
+      "name": "Ancient Tome",
+      "description": "A tome is written in code. What is the first word?",
+      "solution": "welcome",
       "order": 7,
       "room": 1
     }
@@ -146,9 +144,9 @@
     "model": "Escape_room.puzzle",
     "pk": 8,
     "fields": {
-      "name": "Ancient Tome",
-      "description": "A tome is written in code. What is the first word?",
-      "solution": "welcome",
+      "name": "Creaky Floorboard",
+      "description": "A floorboard creaks in a pattern. What number does it tap out?",
+      "solution": "7",
       "order": 8,
       "room": 1
     }
@@ -157,9 +155,9 @@
     "model": "Escape_room.puzzle",
     "pk": 9,
     "fields": {
-      "name": "Creaky Floorboard",
-      "description": "A floorboard creaks in a pattern. What number does it tap out?",
-      "solution": "7",
+      "name": "Final Lock",
+      "description": "The final lock asks: 'What is the librarian's secret?'",
+      "solution": "she is a ghost",
       "order": 9,
       "room": 1
     }
@@ -168,23 +166,21 @@
     "model": "Escape_room.puzzle",
     "pk": 10,
     "fields": {
-      "name": "Final Lock",
-      "description": "The final lock asks: 'What is the librarian's secret?'",
-      "solution": "she is a ghost",
-      "order": 10,
-      "room": 1
+      "name": "Zero Gravity",
+      "description": "How do you anchor yourself in zero gravity?",
+      "solution": "magnetic boots",
+      "order": 1,
+      "room": 2
     }
   },
-
-
   {
     "model": "Escape_room.puzzle",
     "pk": 11,
     "fields": {
-      "name": "Oxygen Countdown",
-      "description": "Restore the oxygen supply before time runs out.",
-      "solution": "valve",
-      "order": 1,
+      "name": "Control Panel",
+      "description": "Which button restarts the life support?",
+      "solution": "red",
+      "order": 2,
       "room": 2
     }
   },
@@ -192,10 +188,10 @@
     "model": "Escape_room.puzzle",
     "pk": 12,
     "fields": {
-      "name": "Zero Gravity",
-      "description": "How do you anchor yourself in zero gravity?",
-      "solution": "magnetic boots",
-      "order": 2,
+      "name": "Alien Message",
+      "description": "Decode the alien message: '01000001' (ASCII)?",
+      "solution": "A",
+      "order": 3,
       "room": 2
     }
   },
@@ -203,10 +199,10 @@
     "model": "Escape_room.puzzle",
     "pk": 13,
     "fields": {
-      "name": "Control Panel",
-      "description": "Which button restarts the life support?",
-      "solution": "red",
-      "order": 3,
+      "name": "Airlock Sequence",
+      "description": "What is the correct sequence to open the airlock?",
+      "solution": "depressurize, unlock, open",
+      "order": 4,
       "room": 2
     }
   },
@@ -214,10 +210,10 @@
     "model": "Escape_room.puzzle",
     "pk": 14,
     "fields": {
-      "name": "Alien Message",
-      "description": "Decode the alien message: '01000001' (ASCII)?",
-      "solution": "A",
-      "order": 4,
+      "name": "Power Outage",
+      "description": "Which backup system restores power?",
+      "solution": "generator",
+      "order": 5,
       "room": 2
     }
   },
@@ -225,10 +221,10 @@
     "model": "Escape_room.puzzle",
     "pk": 15,
     "fields": {
-      "name": "Airlock Sequence",
-      "description": "What is the correct sequence to open the airlock?",
-      "solution": "depressurize, unlock, open",
-      "order": 5,
+      "name": "Navigation Error",
+      "description": "What is the correct course to Earth?",
+      "solution": "42",
+      "order": 6,
       "room": 2
     }
   },
@@ -236,10 +232,10 @@
     "model": "Escape_room.puzzle",
     "pk": 16,
     "fields": {
-      "name": "Power Outage",
-      "description": "Which backup system restores power?",
-      "solution": "generator",
-      "order": 6,
+      "name": "Robot Helper",
+      "description": "What is the robot's activation code?",
+      "solution": "delta",
+      "order": 7,
       "room": 2
     }
   },
@@ -247,10 +243,10 @@
     "model": "Escape_room.puzzle",
     "pk": 17,
     "fields": {
-      "name": "Navigation Error",
-      "description": "What is the correct course to Earth?",
-      "solution": "42",
-      "order": 7,
+      "name": "Hull Breach",
+      "description": "What material patches the breach?",
+      "solution": "titanium",
+      "order": 8,
       "room": 2
     }
   },
@@ -258,40 +254,16 @@
     "model": "Escape_room.puzzle",
     "pk": 18,
     "fields": {
-      "name": "Robot Helper",
-      "description": "What is the robot's activation code?",
-      "solution": "delta",
-      "order": 8,
-      "room": 2
-    }
-  },
-  {
-    "model": "Escape_room.puzzle",
-    "pk": 19,
-    "fields": {
-      "name": "Hull Breach",
-      "description": "What material patches the breach?",
-      "solution": "titanium",
+      "name": "Escape Pod",
+      "description": "What code launches the escape pod?",
+      "solution": "alpha omega",
       "order": 9,
       "room": 2
     }
   },
   {
     "model": "Escape_room.puzzle",
-    "pk": 20,
-    "fields": {
-      "name": "Escape Pod",
-      "description": "What code launches the escape pod?",
-      "solution": "alpha omega",
-      "order": 10,
-      "room": 2
-    }
-  },
-
-
-  {
-    "model": "Escape_room.puzzle",
-    "pk": 21,
+    "pk": 19,
     "fields": {
       "name": "Pharaoh's Code",
       "description": "Crack the ancient code to unlock the tomb.",
@@ -302,12 +274,34 @@
   },
   {
     "model": "Escape_room.puzzle",
+    "pk": 20,
+    "fields": {
+      "name": "Sarcophagus Lock",
+      "description": "What animal guards the pharaoh?",
+      "solution": "jackal",
+      "order": 2,
+      "room": 3
+    }
+  },
+  {
+    "model": "Escape_room.puzzle",
+    "pk": 21,
+    "fields": {
+      "name": "Golden Scarab",
+      "description": "Which color is the sacred scarab?",
+      "solution": "blue",
+      "order": 3,
+      "room": 3
+    }
+  },
+  {
+    "model": "Escape_room.puzzle",
     "pk": 22,
     "fields": {
-      "name": "Hieroglyphics",
-      "description": "Translate the symbol for 'life'.",
-      "solution": "ankh",
-      "order": 2,
+      "name": "River Nile",
+      "description": "What direction does the Nile flow?",
+      "solution": "north",
+      "order": 4,
       "room": 3
     }
   },
@@ -315,10 +309,10 @@
     "model": "Escape_room.puzzle",
     "pk": 23,
     "fields": {
-      "name": "Sarcophagus Lock",
-      "description": "What animal guards the pharaoh?",
-      "solution": "jackal",
-      "order": 3,
+      "name": "Sun Dial",
+      "description": "What time is it when the shadow points east?",
+      "solution": "morning",
+      "order": 5,
       "room": 3
     }
   },
@@ -326,10 +320,10 @@
     "model": "Escape_room.puzzle",
     "pk": 24,
     "fields": {
-      "name": "Golden Scarab",
-      "description": "Which color is the sacred scarab?",
-      "solution": "blue",
-      "order": 4,
+      "name": "Cursed Chamber",
+      "description": "What word breaks the curse?",
+      "solution": "forgiveness",
+      "order": 6,
       "room": 3
     }
   },
@@ -337,10 +331,10 @@
     "model": "Escape_room.puzzle",
     "pk": 25,
     "fields": {
-      "name": "River Nile",
-      "description": "What direction does the Nile flow?",
-      "solution": "north",
-      "order": 5,
+      "name": "Anubis Statue",
+      "description": "What offering does Anubis accept?",
+      "solution": "coin",
+      "order": 7,
       "room": 3
     }
   },
@@ -348,10 +342,10 @@
     "model": "Escape_room.puzzle",
     "pk": 26,
     "fields": {
-      "name": "Sun Dial",
-      "description": "What time is it when the shadow points east?",
-      "solution": "morning",
-      "order": 6,
+      "name": "Secret Passage",
+      "description": "Which stone opens the passage?",
+      "solution": "third",
+      "order": 8,
       "room": 3
     }
   },
@@ -359,51 +353,16 @@
     "model": "Escape_room.puzzle",
     "pk": 27,
     "fields": {
-      "name": "Cursed Chamber",
-      "description": "What word breaks the curse?",
-      "solution": "forgiveness",
-      "order": 7,
-      "room": 3
-    }
-  },
-  {
-    "model": "Escape_room.puzzle",
-    "pk": 28,
-    "fields": {
-      "name": "Anubis Statue",
-      "description": "What offering does Anubis accept?",
-      "solution": "coin",
-      "order": 8,
-      "room": 3
-    }
-  },
-  {
-    "model": "Escape_room.puzzle",
-    "pk": 29,
-    "fields": {
-      "name": "Secret Passage",
-      "description": "Which stone opens the passage?",
-      "solution": "third",
+      "name": "Final Riddle",
+      "description": "What is the pharaoh's true name?",
+      "solution": "ramesses",
       "order": 9,
       "room": 3
     }
   },
   {
     "model": "Escape_room.puzzle",
-    "pk": 30,
-    "fields": {
-      "name": "Final Riddle",
-      "description": "What is the pharaoh's true name?",
-      "solution": "ramesses",
-      "order": 10,
-      "room": 3
-    }
-  },
-
-
-  {
-    "model": "Escape_room.puzzle",
-    "pk": 31,
+    "pk": 28,
     "fields": {
       "name": "Firewall Breach",
       "description": "What tool bypasses the firewall?",
@@ -414,7 +373,7 @@
   },
   {
     "model": "Escape_room.puzzle",
-    "pk": 32,
+    "pk": 29,
     "fields": {
       "name": "Encrypted File",
       "description": "What is the password hint: 'First pet'?",
@@ -425,7 +384,7 @@
   },
   {
     "model": "Escape_room.puzzle",
-    "pk": 33,
+    "pk": 30,
     "fields": {
       "name": "Security Camera",
       "description": "Which wire disables the camera?",
@@ -436,7 +395,7 @@
   },
   {
     "model": "Escape_room.puzzle",
-    "pk": 34,
+    "pk": 31,
     "fields": {
       "name": "Mainframe Access",
       "description": "What is the admin username?",
@@ -447,7 +406,7 @@
   },
   {
     "model": "Escape_room.puzzle",
-    "pk": 35,
+    "pk": 32,
     "fields": {
       "name": "Data Vault",
       "description": "What is the vault's unlock code?",
@@ -458,7 +417,7 @@
   },
   {
     "model": "Escape_room.puzzle",
-    "pk": 36,
+    "pk": 33,
     "fields": {
       "name": "Laser Grid",
       "description": "How do you bypass the laser grid?",
@@ -469,7 +428,7 @@
   },
   {
     "model": "Escape_room.puzzle",
-    "pk": 37,
+    "pk": 34,
     "fields": {
       "name": "Biometric Lock",
       "description": "Whose fingerprint opens the door?",
@@ -480,7 +439,7 @@
   },
   {
     "model": "Escape_room.puzzle",
-    "pk": 38,
+    "pk": 35,
     "fields": {
       "name": "Alarm Override",
       "description": "What code silences the alarm?",
@@ -491,7 +450,7 @@
   },
   {
     "model": "Escape_room.puzzle",
-    "pk": 39,
+    "pk": 36,
     "fields": {
       "name": "Escape Route",
       "description": "Which exit is unguarded?",
@@ -502,7 +461,7 @@
   },
   {
     "model": "Escape_room.puzzle",
-    "pk": 40,
+    "pk": 37,
     "fields": {
       "name": "Final Upload",
       "description": "What is the file name to upload?",
@@ -511,11 +470,9 @@
       "room": 4
     }
   },
-
-
   {
     "model": "Escape_room.puzzle",
-    "pk": 41,
+    "pk": 38,
     "fields": {
       "name": "Fairy Lights",
       "description": "What color do the fairy lights turn at midnight?",
@@ -526,7 +483,7 @@
   },
   {
     "model": "Escape_room.puzzle",
-    "pk": 42,
+    "pk": 39,
     "fields": {
       "name": "Talking Tree",
       "description": "What is the tree's favorite word?",
@@ -537,7 +494,7 @@
   },
   {
     "model": "Escape_room.puzzle",
-    "pk": 43,
+    "pk": 40,
     "fields": {
       "name": "Magic Stream",
       "description": "What animal drinks from the stream at dawn?",
@@ -548,7 +505,7 @@
   },
   {
     "model": "Escape_room.puzzle",
-    "pk": 44,
+    "pk": 41,
     "fields": {
       "name": "Hidden Path",
       "description": "What flower marks the hidden path?",
@@ -559,7 +516,7 @@
   },
   {
     "model": "Escape_room.puzzle",
-    "pk": 45,
+    "pk": 42,
     "fields": {
       "name": "Mushroom Circle",
       "description": "How many mushrooms in the fairy ring?",
@@ -570,7 +527,7 @@
   },
   {
     "model": "Escape_room.puzzle",
-    "pk": 46,
+    "pk": 43,
     "fields": {
       "name": "Enchanted Mirror",
       "description": "What word unlocks the mirror's secret?",
@@ -581,7 +538,7 @@
   },
   {
     "model": "Escape_room.puzzle",
-    "pk": 47,
+    "pk": 44,
     "fields": {
       "name": "Pixie Dust",
       "description": "What ingredient activates pixie dust?",
@@ -592,7 +549,7 @@
   },
   {
     "model": "Escape_room.puzzle",
-    "pk": 48,
+    "pk": 45,
     "fields": {
       "name": "Wise Owl",
       "description": "What is the owl's answer to every riddle?",
@@ -603,7 +560,7 @@
   },
   {
     "model": "Escape_room.puzzle",
-    "pk": 49,
+    "pk": 46,
     "fields": {
       "name": "Moonlit Clearing",
       "description": "What appears in the clearing at midnight?",
@@ -614,7 +571,7 @@
   },
   {
     "model": "Escape_room.puzzle",
-    "pk": 50,
+    "pk": 47,
     "fields": {
       "name": "Forest Gate",
       "description": "What is the password to leave the forest?",

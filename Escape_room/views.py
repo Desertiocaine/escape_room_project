@@ -18,7 +18,7 @@ from django.views.generic import CreateView, UpdateView, DeleteView
 from rest_framework import viewsets
 
 # --- Local App Imports ---
-from .models import Room, Puzzle, Booking, Team
+from .models import Room, Puzzle, Booking, Team, RoomProgress
 from .serializers import RoomSerializer, PuzzleSerializer, BookingSerializer, TeamSerializer
 
 # ===========================
@@ -61,6 +61,15 @@ def join_team(request, pk):
     messages.success(request, f"You joined the team: {team.name}")
     return redirect('team_list')
 
+@login_required
+def restart_room(request, room_id):
+    room = get_object_or_404(Room, id=room_id)
+    progress_qs = RoomProgress.objects.filter(user=request.user, room=room)
+    print("Before delete:", progress_qs.exists())
+    progress_qs.delete()
+    print("After delete:", RoomProgress.objects.filter(user=request.user, room=room).exists())
+    return redirect('room_detail', room_id=room_id)
+
 def register(request):
     if request.method == "POST":
         form = UserCreationForm(request.POST)
@@ -80,21 +89,28 @@ def room_list(request):
     rooms = Room.objects.all()
     return render(request, 'room_list.html', {'rooms': rooms})
 
+
+@login_required
 def room_detail(request, room_id):
     room = get_object_or_404(Room, id=room_id)
-    puzzle = Puzzle.objects.filter(room=room, solved=False).first()
-    # Support for room-specific backgrounds
+    # Get the next unsolved puzzle for this room
+    next_puzzle = Puzzle.objects.filter(room=room, solved=False).order_by('order').first()
     background_images = room.background_images()
-    puzzle_order = puzzle.order if puzzle else 1
-    if request.method == 'POST' and puzzle:
-        answer = request.POST.get('answer')
-        if answer and answer.strip().lower() == puzzle.answer.lower():
-            puzzle.solved = True
-            puzzle.save()
-            puzzle = Puzzle.objects.filter(room=room, solved=False).first()
+    puzzle_order = next_puzzle.order if next_puzzle else 1
+
+    if request.method == 'POST' and next_puzzle:
+        answer = request.POST.get('answer', '').strip().lower()
+        if answer == next_puzzle.answer.strip().lower():
+            next_puzzle.solved = True
+            next_puzzle.save()
+            # Reload the next unsolved puzzle
+            return redirect('room_detail', room_id=room.id)
+        else:
+             messages.error(request, "Incorrect answer. Try again.")
+
     return render(request, 'room_detail.html', {
         'room': room,
-        'puzzle': puzzle,
+        'puzzle': next_puzzle,
         'background_images': background_images,
         'puzzle_order': puzzle_order,
     })

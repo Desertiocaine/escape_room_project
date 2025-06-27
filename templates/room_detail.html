@@ -4,33 +4,41 @@
 
 {% block content %}
     <h1>{{ room.name }}</h1>
-    <div class="qa-container">
-        <h2>{{ puzzle.name }}</h2>
-        <p><strong>Riddle:</strong> {{ puzzle.question }}</p>
-        <p>{{ puzzle.description }}</p>
-        <form method="post">
-            {% csrf_token %}
-            <input type="text" name="answer" placeholder="Make your guess" class="answer-box">
-            <button type="submit">Submit</button>
-        </form>
-    </div>
+    {% if puzzle %}
+        <div class="qa-container">
+            <h2>{{ puzzle.name }}</h2>
+            <p><strong>Puzzle:</strong> {{ puzzle.question }}</p>
+            <p>{{ puzzle.description }}</p>
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="answer" placeholder="Make your guess" class="answer-box">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    {% else %}
+        <p>All puzzles in this room are solved!</p>
+        <form method="post" action="{% url 'restart_room' room.id %}">
+        {% csrf_token %}
+        <button type="submit">Restart Room</button>
+    </form>
+    {% endif %}
     <div id="jumpscare" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; justify-content:center; align-items:center; background:black; z-index:9999;">
-      <img src="/static/img/jumpscare.png" alt="Jumpscare" style="max-width:100vw; max-height:100vh;">
+      <img src="/static/img/jumpscare.jpg" alt="Jumpscare" style="max-width:100vw; max-height:100vh;">
     </div>
     <audio id="jumpscare-audio" src="/static/audio/jumpscare.mp3"></audio>
     {% if background_images %}
-      {% if puzzle_order <= 3 %}
-        {% with bg=background_images.0 %}
-          <img src="{% static bg %}" class="room-bg" alt="Room background">
-        {% endwith %}
-      {% elif puzzle_order <= 6 %}
-        {% with bg=background_images.1 %}
-          <img src="{% static bg %}" class="room-bg" alt="Room background">
-        {% endwith %}
-      {% else %}
-        {% with bg=background_images.2 %}
-          <img src="{% static bg %}" class="room-bg" alt="Room background">
-        {% endwith %}
-      {% endif %}
+        {% if puzzle_order <= 3 %}
+            {% with bg=background_images.0 %}
+                <img src="{% static bg %}" class="room-bg" alt="Room background">
+            {% endwith %}
+        {% elif puzzle_order <= 6 %}
+            {% with bg=background_images.1 %}
+                <img src="{% static bg %}" class="room-bg" alt="Room background">
+            {% endwith %}
+        {% else %}
+            {% with bg=background_images.2 %}
+                <img src="{% static bg %}" class="room-bg" alt="Room background">
+            {% endwith %}
+        {% endif %}
     {% endif %}
 {% endblock %}

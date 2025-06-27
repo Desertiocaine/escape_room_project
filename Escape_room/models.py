@@ -51,3 +51,15 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"{self.team.name} booked {self.room.name} at {self.booking_time}"
+
+class RoomProgress(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    room = models.ForeignKey(Room, on_delete=models.CASCADE)
+    completed = models.BooleanField(default=False)
+    last_updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        unique_together = ('user', 'room')
+
+    def __str__(self):
+        return f"{self.user.username} - {self.room.name} progress"
