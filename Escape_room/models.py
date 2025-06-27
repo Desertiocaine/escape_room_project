@@ -1,4 +1,3 @@
-python
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.contrib.auth.models import User
@@ -9,7 +8,6 @@ class Room(models.Model):
 
     name = models.CharField(max_length=100, unique=True)
     description = models.TextField(default="No description provided.")
-    difficulty = models.IntegerField(choices=DIFFICULTY_CHOICES, default=1)
     max_players = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(20)], default=6)
 
     def __str__(self):
