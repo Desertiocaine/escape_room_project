@@ -3,73 +3,51 @@
     "model": "Escape_room.room",
     "pk": 1,
     "fields": {
-      "name": "The Haunted Library",
-      "description": "Solve the mystery of the haunted books.",
-      "difficulty": 3,
-      "max_players": 6
+      "name": "The Haunted Library"
     }
   },
   {
     "model": "Escape_room.room",
     "pk": 2,
     "fields": {
-      "name": "Space Station Alpha",
-      "description": "Escape before the oxygen runs out.",
-      "difficulty": 4,
-      "max_players": 8
+      "name": "Space Station Alpha"
     }
   },
   {
     "model": "Escape_room.room",
     "pk": 3,
     "fields": {
-      "name": "The Pharaoh's Tomb",
-      "description": "Uncover the secrets of the ancient tomb before time runs out.",
-      "difficulty": 5,
-      "max_players": 5
+      "name": "The Pharaoh's Tomb"
     }
   },
   {
     "model": "Escape_room.room",
     "pk": 4,
     "fields": {
-      "name": "Cyber Heist",
-      "description": "Hack into the mainframe and escape undetected.",
-      "difficulty": 4,
-      "max_players": 7
+      "name": "Cyber Heist"
     }
   },
   {
     "model": "Escape_room.room",
     "pk": 5,
     "fields": {
-      "name": "The Enchanted Forest",
-      "description": "Find your way out of the magical forest by solving fairy riddles.",
-      "difficulty": 2,
-      "max_players": 4
+      "name": "The Enchanted Forest"
     }
   },
   {
-    "model": "Escape_room.team",
-    "pk": 1,
+    "model": "Escape_room.room",
+    "pk": 6,
     "fields": {
-      "name": "Team Alpha"
-    }
-  },
-  {
-    "model": "Escape_room.team",
-    "pk": 2,
-    "fields": {
-      "name": "Mavericks"
+      "name": "The Clockwork Labyrinth"
     }
   },
   {
     "model": "Escape_room.puzzle",
     "pk": 1,
     "fields": {
-      "name": "Flickering Lights",
-      "description": "The lights flicker as you enter. What do you do to see better?",
-      "solution": "light a candle",
+      "name": "Riddle 1",
+      "description": "I am not alive, but I can grow. I don't have lungs, but I need air. What am I?",
+      "solution": "Fire",
       "order": 1,
       "room": 1
     }
@@ -78,9 +56,9 @@
     "model": "Escape_room.puzzle",
     "pk": 2,
     "fields": {
-      "name": "Whispering Shelves",
-      "description": "A whisper tells you to find the oldest book. What year do you look for?",
-      "solution": "1623",
+      "name": "Riddle 2",
+      "description": "Turn me on my side and I am everything. Cut me in half and I am nothing. What am I?",
+      "solution": "The number 8",
       "order": 2,
       "room": 1
     }
@@ -89,9 +67,9 @@
     "model": "Escape_room.puzzle",
     "pk": 3,
     "fields": {
-      "name": "Locked Drawer",
-      "description": "A drawer is locked with a riddle: 'I have keys but open no locks.'",
-      "solution": "piano",
+      "name": "Riddle 3",
+      "description": "The more you take, the more you leave behind. What am I?",
+      "solution": "Footsteps",
       "order": 3,
       "room": 1
     }
@@ -100,9 +78,9 @@
     "model": "Escape_room.puzzle",
     "pk": 4,
     "fields": {
-      "name": "Ghostly Footsteps",
-      "description": "You hear footsteps behind you. What do you say to calm the ghost?",
-      "solution": "rest in peace",
+      "name": "Riddle 4",
+      "description": "What comes once in a minute, twice in a moment, but never in a thousand years?",
+      "solution": "The letter M",
       "order": 4,
       "room": 1
     }
@@ -111,9 +89,9 @@
     "model": "Escape_room.puzzle",
     "pk": 5,
     "fields": {
-      "name": "Secret Passage",
-      "description": "A book triggers a secret door. Which book do you pull?",
-      "solution": "mystery novel",
+      "name": "Riddle 5",
+      "description": "I speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?",
+      "solution": "An echo",
       "order": 5,
       "room": 1
     }
@@ -122,9 +100,9 @@
     "model": "Escape_room.puzzle",
     "pk": 6,
     "fields": {
-      "name": "Haunted Portrait",
-      "description": "A portrait's eyes follow you. What is the subject's name?",
-      "solution": "elizabeth",
+      "name": "Riddle 6",
+      "description": "I can fly without wings. I can cry without eyes. Whenever I go, darkness flies. What am I?",
+      "solution": "A cloud",
       "order": 6,
       "room": 1
     }
@@ -133,9 +111,9 @@
     "model": "Escape_room.puzzle",
     "pk": 7,
     "fields": {
-      "name": "Ancient Tome",
-      "description": "A tome is written in code. What is the first word?",
-      "solution": "welcome",
+      "name": "Riddle 7",
+      "description": "I have keys but open no locks. I have space but no room. You can enter, but you can't go outside. What am I?",
+      "solution": "A keyboard",
       "order": 7,
       "room": 1
     }
@@ -144,9 +122,9 @@
     "model": "Escape_room.puzzle",
     "pk": 8,
     "fields": {
-      "name": "Creaky Floorboard",
-      "description": "A floorboard creaks in a pattern. What number does it tap out?",
-      "solution": "7",
+      "name": "Riddle 8",
+      "description": "The person who makes it sells it. The person who buys it never uses it. The person who uses it never knows they're using it. What is it?",
+      "solution": "A coffin",
       "order": 8,
       "room": 1
     }
@@ -155,9 +133,9 @@
     "model": "Escape_room.puzzle",
     "pk": 9,
     "fields": {
-      "name": "Final Lock",
-      "description": "The final lock asks: 'What is the librarian's secret?'",
-      "solution": "she is a ghost",
+      "name": "Riddle 9",
+      "description": "What is always in front of you but can’t be seen?",
+      "solution": "The future",
       "order": 9,
       "room": 1
     }
@@ -166,21 +144,21 @@
     "model": "Escape_room.puzzle",
     "pk": 10,
     "fields": {
-      "name": "Zero Gravity",
-      "description": "How do you anchor yourself in zero gravity?",
-      "solution": "magnetic boots",
-      "order": 1,
-      "room": 2
+      "name": "Riddle 10",
+      "description": "I am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost every person. What am I?",
+      "solution": "Pencil lead",
+      "order": 10,
+      "room": 1
     }
   },
   {
     "model": "Escape_room.puzzle",
     "pk": 11,
     "fields": {
-      "name": "Control Panel",
-      "description": "Which button restarts the life support?",
-      "solution": "red",
-      "order": 2,
+      "name": "Riddle 1",
+      "description": "What can run but never walks, has a mouth but never talks, has a head but never weeps, and has a bed but never sleeps?",
+      "solution": "A river",
+      "order": 1,
       "room": 2
     }
   },
@@ -188,10 +166,10 @@
     "model": "Escape_room.puzzle",
     "pk": 12,
     "fields": {
-      "name": "Alien Message",
-      "description": "Decode the alien message: '01000001' (ASCII)?",
-      "solution": "A",
-      "order": 3,
+      "name": "Riddle 2",
+      "description": "What has eight to ten letters and travels around the world without moving?",
+      "solution": "A stamp",
+      "order": 2,
       "room": 2
     }
   },
@@ -199,10 +177,10 @@
     "model": "Escape_room.puzzle",
     "pk": 13,
     "fields": {
-      "name": "Airlock Sequence",
-      "description": "What is the correct sequence to open the airlock?",
-      "solution": "depressurize, unlock, open",
-      "order": 4,
+      "name": "Riddle 3",
+      "description": "What belongs to you but others use it more than you do?",
+      "solution": "Your name",
+      "order": 3,
       "room": 2
     }
   },
@@ -210,10 +188,10 @@
     "model": "Escape_room.puzzle",
     "pk": 14,
     "fields": {
-      "name": "Power Outage",
-      "description": "Which backup system restores power?",
-      "solution": "generator",
-      "order": 5,
+      "name": "Riddle 4",
+      "description": "I’m light as a feather, yet the strongest person can’t hold me for five minutes. What am I?",
+      "solution": "Breath",
+      "order": 4,
       "room": 2
     }
   },
@@ -221,10 +199,10 @@
     "model": "Escape_room.puzzle",
     "pk": 15,
     "fields": {
-      "name": "Navigation Error",
-      "description": "What is the correct course to Earth?",
-      "solution": "42",
-      "order": 6,
+      "name": "Riddle 5",
+      "description": "What can you catch, but not throw?",
+      "solution": "A cold",
+      "order": 5,
       "room": 2
     }
   },
@@ -232,10 +210,10 @@
     "model": "Escape_room.puzzle",
     "pk": 16,
     "fields": {
-      "name": "Robot Helper",
-      "description": "What is the robot's activation code?",
-      "solution": "delta",
-      "order": 7,
+      "name": "Riddle 6",
+      "description": "What is so fragile that saying its name breaks it?",
+      "solution": "Silence",
+      "order": 6,
       "room": 2
     }
   },
@@ -243,10 +221,10 @@
     "model": "Escape_room.puzzle",
     "pk": 17,
     "fields": {
-      "name": "Hull Breach",
-      "description": "What material patches the breach?",
-      "solution": "titanium",
-      "order": 8,
+      "name": "Riddle 7",
+      "description": "I am a word of letters three, add two and fewer there will be. What am I?",
+      "solution": "Few",
+      "order": 7,
       "room": 2
     }
   },
@@ -254,10 +232,10 @@
     "model": "Escape_room.puzzle",
     "pk": 18,
     "fields": {
-      "name": "Escape Pod",
-      "description": "What code launches the escape pod?",
-      "solution": "alpha omega",
-      "order": 9,
+      "name": "Riddle 8",
+      "description": "What gets bigger the more you take away?",
+      "solution": "A hole",
+      "order": 8,
       "room": 2
     }
   },
@@ -265,43 +243,43 @@
     "model": "Escape_room.puzzle",
     "pk": 19,
     "fields": {
-      "name": "Pharaoh's Code",
-      "description": "Crack the ancient code to unlock the tomb.",
-      "solution": "ankh",
-      "order": 1,
-      "room": 3
+      "name": "Riddle 9",
+      "description": "I can be cracked, made, told, and played. What am I?",
+      "solution": "A joke",
+      "order": 9,
+      "room": 2
     }
   },
   {
     "model": "Escape_room.puzzle",
     "pk": 20,
     "fields": {
-      "name": "Sarcophagus Lock",
-      "description": "What animal guards the pharaoh?",
-      "solution": "jackal",
-      "order": 2,
-      "room": 3
+      "name": "Riddle 10",
+      "description": "I have cities but no houses, forests but no trees, and rivers but no water. What am I?",
+      "solution": "A map",
+      "order": 10,
+      "room": 2
     }
   },
   {
     "model": "Escape_room.puzzle",
     "pk": 21,
     "fields": {
-      "name": "Golden Scarab",
-      "description": "Which color is the sacred scarab?",
-      "solution": "blue",
-      "order": 3,
+      "name": "Riddle 1",
+      "description": "I’m tall when I’m young, and I’m short when I’m old. What am I?",
+      "solution": "A candle",
+      "order": 1,
       "room": 3
     }
   },
   {
-    "model": "Escape_room.puzzle",
+        "model": "Escape_room.puzzle",
     "pk": 22,
     "fields": {
-      "name": "River Nile",
-      "description": "What direction does the Nile flow?",
-      "solution": "north",
-      "order": 4,
+      "name": "Riddle 2",
+      "description": "What has hands but can’t clap?",
+      "solution": "A clock",
+      "order": 2,
       "room": 3
     }
   },
@@ -309,10 +287,10 @@
     "model": "Escape_room.puzzle",
     "pk": 23,
     "fields": {
-      "name": "Sun Dial",
-      "description": "What time is it when the shadow points east?",
-      "solution": "morning",
-      "order": 5,
+      "name": "Riddle 3",
+      "description": "What has to be broken before you can use it?",
+      "solution": "An egg",
+      "order": 3,
       "room": 3
     }
   },
@@ -320,10 +298,10 @@
     "model": "Escape_room.puzzle",
     "pk": 24,
     "fields": {
-      "name": "Cursed Chamber",
-      "description": "What word breaks the curse?",
-      "solution": "forgiveness",
-      "order": 6,
+      "name": "Riddle 4",
+      "description": "What is full of holes but still holds water?",
+      "solution": "A sponge",
+      "order": 4,
       "room": 3
     }
   },
@@ -331,10 +309,10 @@
     "model": "Escape_room.puzzle",
     "pk": 25,
     "fields": {
-      "name": "Anubis Statue",
-      "description": "What offering does Anubis accept?",
-      "solution": "coin",
-      "order": 7,
+      "name": "Riddle 5",
+      "description": "What question can you never answer 'yes' to?",
+      "solution": "Are you asleep?",
+      "order": 5,
       "room": 3
     }
   },
@@ -342,10 +320,10 @@
     "model": "Escape_room.puzzle",
     "pk": 26,
     "fields": {
-      "name": "Secret Passage",
-      "description": "Which stone opens the passage?",
-      "solution": "third",
-      "order": 8,
+      "name": "Riddle 6",
+      "description": "What is it that lives if it is fed, and dies if you give it a drink?",
+      "solution": "Fire",
+      "order": 6,
       "room": 3
     }
   },
@@ -353,10 +331,10 @@
     "model": "Escape_room.puzzle",
     "pk": 27,
     "fields": {
-      "name": "Final Riddle",
-      "description": "What is the pharaoh's true name?",
-      "solution": "ramesses",
-      "order": 9,
+      "name": "Riddle 7",
+      "description": "What is seen in the middle of March and April but can’t be seen at the beginning or end of either month?",
+      "solution": "The letter R",
+      "order": 7,
       "room": 3
     }
   },
@@ -364,43 +342,43 @@
     "model": "Escape_room.puzzle",
     "pk": 28,
     "fields": {
-      "name": "Firewall Breach",
-      "description": "What tool bypasses the firewall?",
-      "solution": "exploit",
-      "order": 1,
-      "room": 4
+      "name": "Riddle 8",
+      "description": "What word is pronounced the same if you take away four of its five letters?",
+      "solution": "Queue",
+      "order": 8,
+      "room": 3
     }
   },
   {
     "model": "Escape_room.puzzle",
     "pk": 29,
     "fields": {
-      "name": "Encrypted File",
-      "description": "What is the password hint: 'First pet'?",
-      "solution": "fluffy",
-      "order": 2,
-      "room": 4
+      "name": "Riddle 9",
+      "description": "What is as light as a feather, yet the strongest man cannot hold it for much longer than a minute?",
+      "solution": "Breath",
+      "order": 9,
+      "room": 3
     }
   },
   {
     "model": "Escape_room.puzzle",
     "pk": 30,
     "fields": {
-      "name": "Security Camera",
-      "description": "Which wire disables the camera?",
-      "solution": "blue",
-      "order": 3,
-      "room": 4
+      "name": "Riddle 10",
+      "description": "Forward I am heavy, but backward I am not. What am I?",
+      "solution": "Ton",
+      "order": 10,
+      "room": 3
     }
   },
   {
     "model": "Escape_room.puzzle",
     "pk": 31,
     "fields": {
-      "name": "Mainframe Access",
-      "description": "What is the admin username?",
-      "solution": "root",
-      "order": 4,
+      "name": "Riddle 1",
+      "description": "What has words, but never speaks?",
+      "solution": "A book",
+      "order": 1,
       "room": 4
     }
   },
@@ -408,10 +386,10 @@
     "model": "Escape_room.puzzle",
     "pk": 32,
     "fields": {
-      "name": "Data Vault",
-      "description": "What is the vault's unlock code?",
-      "solution": "8675309",
-      "order": 5,
+      "name": "Riddle 2",
+      "description": "I’m found in socks, scarves, and mittens; and often in the paws of playful kittens. What am I?",
+      "solution": "Yarn",
+      "order": 2,
       "room": 4
     }
   },
@@ -419,10 +397,10 @@
     "model": "Escape_room.puzzle",
     "pk": 33,
     "fields": {
-      "name": "Laser Grid",
-      "description": "How do you bypass the laser grid?",
-      "solution": "mirror",
-      "order": 6,
+      "name": "Riddle 3",
+      "description": "What is always coming but never arrives?",
+      "solution": "Tomorrow",
+      "order": 3,
       "room": 4
     }
   },
@@ -430,10 +408,10 @@
     "model": "Escape_room.puzzle",
     "pk": 34,
     "fields": {
-      "name": "Biometric Lock",
-      "description": "Whose fingerprint opens the door?",
-      "solution": "ceo",
-      "order": 7,
+      "name": "Riddle 4",
+      "description": "I have branches, but no fruit, trunk, or leaves. What am I?",
+      "solution": "A bank",
+      "order": 4,
       "room": 4
     }
   },
@@ -441,10 +419,10 @@
     "model": "Escape_room.puzzle",
     "pk": 35,
     "fields": {
-      "name": "Alarm Override",
-      "description": "What code silences the alarm?",
-      "solution": "delta42",
-      "order": 8,
+      "name": "Riddle 5",
+      "description": "You can hold me in your hand but use me with your head. What am I?",
+      "solution": "A brain teaser",
+      "order": 5,
       "room": 4
     }
   },
@@ -452,10 +430,10 @@
     "model": "Escape_room.puzzle",
     "pk": 36,
     "fields": {
-      "name": "Escape Route",
-      "description": "Which exit is unguarded?",
-      "solution": "north",
-      "order": 9,
+      "name": "Riddle 6",
+      "description": "What can fill a room but takes up no space?",
+      "solution": "Light",
+      "order": 6,
       "room": 4
     }
   },
@@ -463,10 +441,10 @@
     "model": "Escape_room.puzzle",
     "pk": 37,
     "fields": {
-      "name": "Final Upload",
-      "description": "What is the file name to upload?",
-      "solution": "payload.exe",
-      "order": 10,
+      "name": "Riddle 7",
+      "description": "I go in hard, come out soft, and am never the same. What am I?",
+      "solution": "Chewing gum",
+      "order": 7,
       "room": 4
     }
   },
@@ -474,43 +452,43 @@
     "model": "Escape_room.puzzle",
     "pk": 38,
     "fields": {
-      "name": "Fairy Lights",
-      "description": "What color do the fairy lights turn at midnight?",
-      "solution": "silver",
-      "order": 1,
-      "room": 5
+      "name": "Riddle 8",
+      "description": "What is more useful when it is broken?",
+      "solution": "An egg",
+      "order": 8,
+      "room": 4
     }
   },
   {
     "model": "Escape_room.puzzle",
     "pk": 39,
     "fields": {
-      "name": "Talking Tree",
-      "description": "What is the tree's favorite word?",
-      "solution": "wisdom",
-      "order": 2,
-      "room": 5
+      "name": "Riddle 9",
+      "description": "What travels around the world but stays in one corner?",
+      "solution": "A stamp",
+      "order": 9,
+      "room": 4
     }
   },
   {
     "model": "Escape_room.puzzle",
     "pk": 40,
     "fields": {
-      "name": "Magic Stream",
-      "description": "What animal drinks from the stream at dawn?",
-      "solution": "deer",
-      "order": 3,
-      "room": 5
+      "name": "Riddle 10",
+      "description": "I have a heart that never beats. I have a home but I never sleep. I can take a man's house and build another's. And I love to play games with my many brothers. What am I?",
+      "solution": "A deck of cards",
+      "order": 10,
+      "room": 4
     }
   },
   {
     "model": "Escape_room.puzzle",
     "pk": 41,
     "fields": {
-      "name": "Hidden Path",
-      "description": "What flower marks the hidden path?",
-      "solution": "bluebell",
-      "order": 4,
+      "name": "Riddle 1",
+      "description": "What has roots that nobody sees, is taller than trees, up, up it goes, and yet never grows?",
+      "solution": "A mountain",
+      "order": 1,
       "room": 5
     }
   },
@@ -518,10 +496,10 @@
     "model": "Escape_room.puzzle",
     "pk": 42,
     "fields": {
-      "name": "Mushroom Circle",
-      "description": "How many mushrooms in the fairy ring?",
-      "solution": "12",
-      "order": 5,
+      "name": "Riddle 2",
+      "description": "What can fill a house like air but sits in your pocket without weight?",
+      "solution": "A key",
+      "order": 2,
       "room": 5
     }
   },
@@ -529,10 +507,10 @@
     "model": "Escape_room.puzzle",
     "pk": 43,
     "fields": {
-      "name": "Enchanted Mirror",
-      "description": "What word unlocks the mirror's secret?",
-      "solution": "truth",
-      "order": 6,
+      "name": "Riddle 3",
+      "description": "It’s been around for millions of years, but is never more than a month old. What is it?",
+      "solution": "The moon",
+      "order": 3,
       "room": 5
     }
   },
@@ -540,10 +518,10 @@
     "model": "Escape_room.puzzle",
     "pk": 44,
     "fields": {
-      "name": "Pixie Dust",
-      "description": "What ingredient activates pixie dust?",
-      "solution": "laughter",
-      "order": 7,
+      "name": "Riddle 4",
+      "description": "Alive without breath, as cold as death; never thirsty, ever drinking, all in mail never clinking. What am I?",
+      "solution": "A fish",
+      "order": 4,
       "room": 5
     }
   },
@@ -551,10 +529,10 @@
     "model": "Escape_room.puzzle",
     "pk": 45,
     "fields": {
-      "name": "Wise Owl",
-      "description": "What is the owl's answer to every riddle?",
-      "solution": "patience",
-      "order": 8,
+      "name": "Riddle 5",
+      "description": "I am found in every forest, yet none can hold me in their hands. What am I?",
+      "solution": "The wind",
+      "order": 5,
       "room": 5
     }
   },
@@ -562,22 +540,165 @@
     "model": "Escape_room.puzzle",
     "pk": 46,
     "fields": {
-      "name": "Moonlit Clearing",
-      "description": "What appears in the clearing at midnight?",
-      "solution": "unicorn",
-      "order": 9,
-      "room": 5
-    }
-  },
-  {
-    "model": "Escape_room.puzzle",
-    "pk": 47,
-    "fields": {
-      "name": "Forest Gate",
-      "description": "What is the password to leave the forest?",
-      "solution": "goodbye",
-      "order": 10,
-      "room": 5
-    }
+      "name": "Riddle 6",
+      "description": "I speak in a language without words, and tales of past I hold. What am I?",
+      "solution": "The rings of a tree",
+      "order": 6,
+          "room": 5
   }
+},
+{
+  "model": "Escape_room.puzzle",
+  "pk": 47,
+  "fields": {
+    "name": "Riddle 7",
+    "description": "I dance but have no feet. I follow you around, yet you cannot see me. What am I?",
+    "solution": "Your shadow",
+    "order": 7,
+    "room": 5
+  }
+},
+{
+  "model": "Escape_room.puzzle",
+  "pk": 48,
+  "fields": {
+    "name": "Riddle 8",
+    "description": "What can run but cannot walk, has a mouth but never talks, has a bed but never sleeps?",
+    "solution": "A river",
+    "order": 8,
+    "room": 5
+  }
+},
+{
+  "model": "Escape_room.puzzle",
+  "pk": 49,
+  "fields": {
+    "name": "Riddle 9",
+    "description": "In the forest of secrets, I am the path to light. Without me, the lost stay lost. What am I?",
+    "solution": "A trail",
+    "order": 9,
+    "room": 5
+  }
+},
+{
+  "model": "Escape_room.puzzle",
+  "pk": 50,
+  "fields": {
+    "name": "Riddle 10",
+    "description": "I weave the threads of life in a tapestry unseen, in the enchanted forest, I reign as queen. What am I?",
+    "solution": "Fate",
+    "order": 10,
+    "room": 5
+  }
+},
+{
+  "model": "Escape_room.puzzle",
+  "pk": 51,
+  "fields": {
+    "name": "Riddle 1",
+    "description": "What has a face and two hands but no arms or legs?",
+    "solution": "A clock",
+    "order": 1,
+    "room": 6
+  }
+},
+{
+  "model": "Escape_room.puzzle",
+  "pk": 52,
+  "fields": {
+    "name": "Riddle 2",
+    "description": "What is made of water but if you put it into water it will die?",
+    "solution": "An ice cube",
+    "order": 2,
+    "room": 6
+  }
+},
+{
+  "model": "Escape_room.puzzle",
+  "pk": 53,
+  "fields": {
+    "name": "Riddle 3",
+    "description": "When you need me, you throw me away. But when you’re done with me, you bring me back. What am I?",
+    "solution": "An anchor",
+    "order": 3,
+    "room": 6
+  }
+},
+{
+  "model": "Escape_room.puzzle",
+  "pk": 54,
+  "fields": {
+    "name": "Riddle 4",
+    "description": "What has a neck but no head?",
+    "solution": "A bottle",
+    "order": 4,
+    "room": 6
+  }
+},
+{
+  "model": "Escape_room.puzzle",
+  "pk": 55,
+  "fields": {
+    "name": "Riddle 5",
+    "description": "What can run but never gets tired?",
+    "solution": "A clock",
+    "order": 5,
+    "room": 6
+  }
+},
+{
+  "model": "Escape_room.puzzle",
+  "pk": 56,
+  "fields": {
+    "name": "Riddle 6",
+    "description": "What has four wheels and flies, but is not an airplane?",
+    "solution": "A garbage truck",
+    "order": 6,
+    "room": 6
+  }
+},
+{
+  "model": "Escape_room.puzzle",
+  "pk": 57,
+  "fields": {
+    "name": "Riddle 7",
+    "description": "What can go up a chimney down, but cannot go down a chimney up?",
+    "solution": "An umbrella",
+    "order": 7,
+    "room": 6
+  }
+},
+{
+  "model": "Escape_room.puzzle",
+  "pk": 58,
+  "fields": {
+    "name": "Riddle 8",
+    "description": "I turn everything around but do not move. When what is up should be down, give me a whirl. What am I?",
+    "solution": "A mirror",
+    "order": 8,
+    "room": 6
+  }
+},
+{
+  "model": "Escape_room.puzzle",
+  "pk": 59,
+  "fields": {
+    "name": "Riddle 9",
+    "description": "I exist only when you are here, once gone I too disappear. What am I?",
+    "solution": "A reflection",
+    "order": 9,
+    "room": 6
+  }
+},
+{
+  "model": "Escape_room.puzzle",
+  "pk": 60,
+  "fields": {
+    "name": "Riddle 10",
+    "description": "At the heart of this labyrinth, time stands still for all, and yet it governs every step you take. What am I?",
+    "solution": "The clock",
+    "order": 10,
+    "room": 6
+  }
+}
 ]
