@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d9b723c2-d1cd-4b92-85a7-8fd68affec05" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
+=======
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +49,12 @@
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;Python tests.Python tests in test1_userLogin.py.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests in test2_teamList.py.executor&quot;: &quot;Run&quot;,
+<<<<<<< Updated upstream
+=======
+    &quot;Python tests.Python tests in test3_createRoom.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test4_createTeam.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test4_createTeam_Join.py.executor&quot;: &quot;Run&quot;,
+>>>>>>> Stashed changes
     &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
@@ -61,7 +70,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+<<<<<<< Updated upstream
   <component name="RunManager" selected="Python tests.Python tests in test2_teamList.py">
+=======
+  <component name="RunManager">
+>>>>>>> Stashed changes
     <configuration name="DjangoProject" type="Python.DjangoServer" factoryName="Django server">
       <module name="DjangoProject" />
       <option name="ENV_FILES" value="" />
