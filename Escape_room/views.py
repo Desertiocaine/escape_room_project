@@ -117,7 +117,7 @@ def room_detail(request, room_id):
 
 class RoomCreateView(UserPassesTestMixin, CreateView):
     model = Room
-    fields = ['name', 'description', 'difficulty', 'max_players']
+    fields = ['name', 'description', 'max_players']
     template_name = 'room_form.html'
     success_url = reverse_lazy('room_list')
     def test_func(self):
@@ -125,7 +125,7 @@ class RoomCreateView(UserPassesTestMixin, CreateView):
 
 class RoomUpdateView(UserPassesTestMixin, UpdateView):
     model = Room
-    fields = ['name', 'description', 'difficulty', 'max_players']
+    fields = ['name', 'description', 'max_players']
     template_name = 'room_form.html'
     success_url = reverse_lazy('room_list')
     def test_func(self):
