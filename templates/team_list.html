@@ -5,8 +5,15 @@
 <div class="container teams-list">
     <h1>Teams</h1>
     <ul class="styled-list">
-        {% for team in teams %}
-            <li><a href="{% url 'team_detail' team.pk %}">{{ team.name }}</a></li>
+        % for team in teams %}
+          <li>
+            <a href="{% url 'team_detail' team.pk %}">{{ team.name }}</a>
+            {% if user not in team.members.all %}
+              <a href="{% url 'join_team' team.pk %}">Join</a>
+            {% else %}
+              <span>(Member)</span>
+            {% endif %}
+          </li>
         {% endfor %}
         {% if user.is_staff %}
             <li><a href="{% url 'team_create' %}">Create Team</a></li>
