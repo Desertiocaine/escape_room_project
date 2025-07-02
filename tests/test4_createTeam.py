@@ -47,3 +47,5 @@ def test_superuser_can_create(browser):
     WebDriverWait(browser, 10).until(
         EC.text_to_be_present_in_element((By.TAG_NAME, 'body'), new_team_name)
     )
+
+    time.sleep(10)

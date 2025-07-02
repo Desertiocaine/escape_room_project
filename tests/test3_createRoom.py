@@ -21,9 +21,11 @@ def test_valid_user_can_create_room(browser):
     browser.find_element(By.NAME, 'password').send_keys('Steal2020!')
     browser.find_element(By.XPATH, '//button[@type="submit"]').click()
 
-    WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, 'Rooms'))).click()
+    rooms_link = WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, 'Rooms')))
+    rooms_link.click()
 
-    WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, 'Create New Room'))).click()
+    create_room_link = WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, 'Create New Room')))
+    create_room_link.click()
 
     WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.NAME, 'name')))
     browser.find_element(By.NAME, 'name').send_keys(f'Test Room {int(time.time())}')
@@ -34,3 +36,5 @@ def test_valid_user_can_create_room(browser):
 
     WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.TAG_NAME, 'body')))
     assert "Test Room" in browser.page_source
+
+    time.sleep(10)
