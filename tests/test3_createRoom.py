@@ -17,8 +17,8 @@ def test_valid_user_can_create_room(browser):
     WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, 'Login'))).click()
 
     WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.NAME, 'username')))
-    browser.find_element(By.NAME, 'username').send_keys('Finn')
-    browser.find_element(By.NAME, 'password').send_keys('Maverick')
+    browser.find_element(By.NAME, 'username').send_keys('Kenneth')
+    browser.find_element(By.NAME, 'password').send_keys('Euell2360!')
     browser.find_element(By.XPATH, '//button[@type="submit"]').click()
 
     time.sleep(5)
