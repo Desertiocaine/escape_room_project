@@ -6,9 +6,9 @@ __pycache__/
 *.pyc
 
 # Virtual environments
+.venv/
+venv1/
 venv/
-env/
-ENV/
 *.env
 
 # Django
