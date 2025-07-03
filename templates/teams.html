@@ -2,6 +2,14 @@
 {% block body_class %}teams-list{% endblock %}
 {% block content %}
 
+<style>
+  body.teams-list {
+    background: url("{% static 'img/teams-background.jpg' %}") no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+  }
+</style>
+
 <h1>Teams</h1>
 
 {% if user.is_authenticated %}

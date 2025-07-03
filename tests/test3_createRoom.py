@@ -21,16 +21,30 @@ def test_valid_user_can_create_room(browser):
     browser.find_element(By.NAME, 'password').send_keys('Maverick')
     browser.find_element(By.XPATH, '//button[@type="submit"]').click()
 
+    time.sleep(10)
+
     WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, 'Rooms'))).click()
+
+    time.sleep(10)
 
     WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, 'Create New Room'))).click()
 
+    time.sleep(10)
+
     WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.NAME, 'name')))
     browser.find_element(By.NAME, 'name').send_keys(f'Test Room {int(time.time())}')
+    element = browser.find_element(By.NAME, 'description')
+    element.clear()
     browser.find_element(By.NAME, 'description').send_keys('Selenium test room.')
     browser.find_element(By.NAME, 'max_players').send_keys('5')
 
+    time.sleep(10)
+
     browser.find_element(By.XPATH, '//button[@type="submit"]').click()
+
+    time.sleep(10)
 
     WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.TAG_NAME, 'body')))
     assert "Test Room" in browser.page_source
+
+    time.sleep(10)

@@ -25,13 +25,19 @@ def test_superuser_can_create(browser):
     browser.find_element(By.NAME, 'password').send_keys('Maverick')
     browser.find_element(By.XPATH, '//button[@type="submit"]').click()
 
+    time.sleep(10)
+
     WebDriverWait(browser, 10).until(
         EC.element_to_be_clickable((By.LINK_TEXT, 'Teams'))
     ).click()
 
+    time.sleep(10)
+
     WebDriverWait(browser, 10).until(
         EC.element_to_be_clickable((By.LINK_TEXT, 'Create Team'))
     ).click()
+
+    time.sleep(10)
 
     WebDriverWait(browser, 10).until(
         EC.presence_of_element_located((By.NAME, 'name'))
@@ -40,10 +46,16 @@ def test_superuser_can_create(browser):
     browser.find_element(By.NAME, 'name').send_keys(new_team_name)
     browser.find_element(By.XPATH, '//button[@type="submit"]').click()
 
+    time.sleep(10)
+
     WebDriverWait(browser, 10).until(
         EC.element_to_be_clickable((By.LINK_TEXT, 'Teams'))
     ).click()
 
+    time.sleep(10)
+
     WebDriverWait(browser, 10).until(
         EC.text_to_be_present_in_element((By.TAG_NAME, 'body'), new_team_name)
     )
+
+    time.sleep(10)

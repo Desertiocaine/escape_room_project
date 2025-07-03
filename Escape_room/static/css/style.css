@@ -44,7 +44,12 @@ body.register a:visited {
   color: #e0e0e0;
 }
 body.register-bg {
-    background: url('../img/register-bg.jpg') no-repeat center center fixed;
+    background: url('../img/register_bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+body.teams-list {
+    background: url('../img/default_bg.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 .booking-detail,
