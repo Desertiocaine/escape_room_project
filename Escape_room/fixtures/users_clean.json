@@ -16,7 +16,7 @@
     "pk": 2,
     "fields": {
       "username": "Finn",
-      "email": "fvalle@unommaha.edu",
+      "email": "fvalle@unomaha.edu",
       "is_staff": true,
       "is_superuser": true,
       "is_active": true,

@@ -21,7 +21,7 @@ def test_superuser_can_create(browser):
     WebDriverWait(browser, 10).until(
         EC.presence_of_element_located((By.NAME, 'username'))
     )
-    browser.find_element(By.NAME, 'username').send_keys('Finn')
+    browser.find_element(By.NAME, 'username').send_keys('fvalle@unomaha.edu')
     browser.find_element(By.NAME, 'password').send_keys('Maverick')
     browser.find_element(By.XPATH, '//button[@type="submit"]').click()
 
